@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>FrigoMix — Dis-moi ce que tu as, je te dis quoi cuisiner</title>
+<title>FrigoMix — Ton frigo a déjà de bonnes idées</title>
 <meta name="description" content="Ajoute ce que tu as dans le frigo et les placards, FrigoMix te dit quelles recettes Cookidoo tu peux préparer avec ton Thermomix." />
-<meta name="theme-color" content="#f6f3ec" media="(prefers-color-scheme: light)" />
-<meta name="theme-color" content="#1c1c1a" media="(prefers-color-scheme: dark)" />
+<meta name="theme-color" content="#FFF8EC" media="(prefers-color-scheme: light)" />
+<meta name="theme-color" content="#122019" media="(prefers-color-scheme: dark)" />
 <link rel="manifest" href="manifest.json" />
 <link rel="icon" href="assets/icons/icon.svg" type="image/svg+xml" />
 <link rel="apple-touch-icon" href="assets/icons/icon.svg" />
@@ -17,21 +17,58 @@
 
 <header class="app-header">
   <div class="app-header__inner">
-    <p class="app-name">FrigoMix</p>
-    <p class="app-tagline">Qu'est-ce qu'on mange ?</p>
+    <div class="brand">
+      <svg class="brand__mark" width="34" height="34" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect class="brand__mark-bg" width="48" height="48" rx="13"/>
+        <rect x="15.5" y="10.5" width="19" height="27" rx="4.5" fill="#FFF8EC"/>
+        <rect x="18.5" y="14" width="2.6" height="6" rx="1.3" fill="#1E4635"/>
+        <path d="M28 8.5c4.3 1.5 7.6 5.8 6.9 11-5.4 1.5-10-.6-11.6-4.5-1.2-3 .7-7.7 4.7-6.5z" fill="#F5A66A"/>
+        <path d="M25.2 13.8c2.9 1.9 6.7 2.5 9.9 1.4" stroke="#E85D3F" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+      </svg>
+      <span class="brand__word">Frigo<b>Mix</b></span>
+    </div>
+    <div class="header-actions">
+      <p id="recipe-count" class="recipe-count" hidden></p>
+      <a href="#favorites-panel" class="icon-btn" id="header-favorites-link" aria-label="Voir mes favoris">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-10-9.3C.6 7.8 2.3 4 6 4c2.2 0 3.8 1.2 6 3.6C14.2 5.2 15.8 4 18 4c3.7 0 5.4 3.8 4 7.2-2.5 4.7-10 9.3-10 9.3Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+        <span class="header-actions__label">Favoris</span>
+      </a>
+      <a href="#history-panel" class="icon-btn" id="header-history-link" aria-label="Voir mon historique">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M3 4v5h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 8v4.5l3 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span class="header-actions__label">Historique</span>
+      </a>
+    </div>
   </div>
 </header>
 
-<main id="main">
-  <section class="intro" aria-hidden="false">
-    <p class="intro__text">Ajoute ce que tu as dans le frigo et les placards.</p>
+<div class="app-shell">
+<main id="main" class="app-shell__main">
+
+  <section class="hero">
+    <div class="hero__text">
+      <h1 class="hero__promise">Ton frigo a déjà de bonnes idées.</h1>
+      <p class="hero__sub">Ajoute ce que tu as sous la main, FrigoMix trouve les recettes que tu peux préparer avec ton Thermomix.</p>
+    </div>
+    <div class="hero__art" aria-hidden="true">
+      <svg viewBox="0 0 200 190" xmlns="http://www.w3.org/2000/svg">
+        <rect x="38" y="30" width="112" height="150" rx="20" fill="#2F6B4F"/>
+        <rect x="50" y="46" width="88" height="118" rx="12" fill="#FFF8EC"/>
+        <rect x="60" y="60" width="6" height="20" rx="3" fill="#2F6B4F"/>
+        <rect x="60" y="104" width="6" height="20" rx="3" fill="#2F6B4F"/>
+        <path d="M96 6c9 10 12 24 4 36-14 4-27-3-30-16C67 15 82-3 96 6Z" fill="#F5A66A"/>
+        <path d="M74 24c9 6 20 8 29 4" stroke="#E85D3F" stroke-width="3" stroke-linecap="round" fill="none"/>
+        <path d="M132 40c10-6 22-4 27 4 0 11-9 19-20 19-7-9-9-16-7-23Z" fill="#F3CC62"/>
+        <circle cx="150" cy="94" r="7" fill="#E85D3F"/>
+        <circle cx="158" cy="118" r="4.5" fill="#F5A66A"/>
+      </svg>
+    </div>
   </section>
 
-  <section class="panel" aria-labelledby="add-heading">
+  <section class="input-card" aria-labelledby="add-heading">
     <h2 id="add-heading" class="visually-hidden">Ajouter des ingrédients</h2>
+    <label for="ingredient-input" class="input-card__label">Qu'est-ce qu'il reste dans ton frigo ?</label>
 
     <div class="input-row">
-      <label for="ingredient-input" class="visually-hidden">Ajouter un ou plusieurs ingrédients</label>
       <input
         id="ingredient-input"
         type="text"
@@ -50,94 +87,8 @@
     <ul id="pantry-chips" class="chips" aria-label="Ingrédients ajoutés"></ul>
   </section>
 
-  <section class="panel" id="staples-panel">
-    <button type="button" class="panel-toggle" id="staples-toggle" aria-expanded="false" aria-controls="staples-content">
-      <span>J'ai généralement chez moi</span>
-      <span class="chevron" aria-hidden="true">›</span>
-    </button>
-    <div id="staples-content" class="panel-content" hidden>
-      <div id="staples-list" class="staples-list"></div>
-    </div>
-  </section>
-
-  <section class="panel" id="forbidden-panel">
-    <button type="button" class="panel-toggle" id="forbidden-toggle" aria-expanded="false" aria-controls="forbidden-content">
-      <span>Je ne veux pas</span>
-      <span class="chevron" aria-hidden="true">›</span>
-    </button>
-    <div id="forbidden-content" class="panel-content" hidden>
-      <div class="input-row">
-        <label for="forbidden-input" class="visually-hidden">Ingrédients à exclure</label>
-        <input id="forbidden-input" type="text" autocomplete="off" placeholder="Ex : poisson, coriandre, porc..." />
-        <button id="add-forbidden-btn" type="button" class="btn btn--secondary">Ajouter</button>
-      </div>
-      <ul id="forbidden-chips" class="chips chips--forbidden" aria-label="Ingrédients exclus"></ul>
-    </div>
-  </section>
-
-  <section class="panel" id="filters-panel">
-    <button type="button" class="panel-toggle" id="filters-toggle" aria-expanded="false" aria-controls="filters-content">
-      <span>Filtres</span>
-      <span class="chevron" aria-hidden="true">›</span>
-    </button>
-    <div id="filters-content" class="panel-content" hidden>
-      <div class="filter-grid">
-        <label class="filter-field">
-          Personnes
-          <select id="filter-servings">
-            <option value="">Peu importe</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4" selected>4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-          </select>
-        </label>
-        <label class="filter-field">
-          Temps maximum
-          <select id="filter-time">
-            <option value="">Peu importe</option>
-            <option value="1200">20 min</option>
-            <option value="1800">30 min</option>
-            <option value="2700">45 min</option>
-            <option value="3600">1 h</option>
-          </select>
-        </label>
-        <label class="filter-field">
-          Difficulté
-          <select id="filter-difficulty">
-            <option value="">Peu importe</option>
-            <option value="Facile">Facile</option>
-            <option value="Moyen">Moyen</option>
-          </select>
-        </label>
-        <label class="filter-field">
-          Type
-          <select id="filter-category">
-            <option value="">Peu importe</option>
-            <option value="Entrée">Entrée</option>
-            <option value="Plat">Plat</option>
-            <option value="Dessert">Dessert</option>
-            <option value="Soupe">Soupe</option>
-            <option value="Sauce">Sauce</option>
-            <option value="Apéritif">Apéritif</option>
-          </select>
-        </label>
-        <label class="filter-field">
-          Thermomix
-          <select id="filter-thermomix">
-            <option value="">Peu importe</option>
-            <option value="TM7" selected>TM7</option>
-            <option value="TM6">TM6</option>
-            <option value="TM5">TM5</option>
-          </select>
-        </label>
-      </div>
-    </div>
-  </section>
-
-  <div class="cta-row">
-    <button id="search-btn" type="button" class="btn btn--primary" disabled>Trouver mes recettes</button>
+  <div class="cta-bar">
+    <button id="search-btn" type="button" class="btn btn--primary" disabled>Ajoute des ingrédients</button>
     <button id="cookidoo-fallback-btn" type="button" class="btn btn--ghost" hidden>Rechercher ces ingrédients sur Cookidoo</button>
   </div>
 
@@ -148,18 +99,25 @@
     </div>
 
     <div id="empty-state" class="state-block">
-      <p class="state-emoji" aria-hidden="true">🧊</p>
+      <div class="state-art" aria-hidden="true">
+        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><rect x="14" y="6" width="36" height="52" rx="10" fill="#F5EEDC"/><rect x="20" y="16" width="4" height="10" rx="2" fill="#2F6B4F"/><rect x="20" y="34" width="4" height="10" rx="2" fill="#2F6B4F"/><path d="M42 4c6 3 9 10 6 17-7 1-13-3-14-9-1-4 2-9 8-8Z" fill="#F5A66A"/></svg>
+      </div>
       <p class="state-title">Qu'est-ce qu'il reste dans le frigo ?</p>
       <p class="state-text">Ajoute quelques ingrédients et je cherche ce que tu peux préparer avec ton Thermomix.</p>
     </div>
 
     <div id="no-results-state" class="state-block" hidden>
-      <p class="state-title">On n'a rien trouvé de vraiment convaincant avec tout ça.</p>
+      <p class="state-title">Pas de résultat parfait, mais voici comment faire mieux.</p>
       <ul class="state-suggestions">
         <li>Retire un ingrédient obligatoire</li>
         <li>Augmente le temps disponible</li>
         <li>Autorise davantage d'ingrédients manquants</li>
       </ul>
+    </div>
+
+    <div id="results-header" class="results-header" hidden>
+      <p id="results-header-title" class="results-header__title"></p>
+      <p id="results-header-recap" class="results-header__recap"></p>
     </div>
 
     <ul id="results-list" class="results-list"></ul>
@@ -169,9 +127,110 @@
     </div>
   </section>
 
+</main>
+
+<aside class="app-shell__side">
+
+  <section class="settings-group" aria-label="Réglages">
+    <div class="panel" id="staples-panel">
+      <button type="button" class="panel-toggle" id="staples-toggle" aria-expanded="false" aria-controls="staples-content">
+        <span class="panel-toggle__label">
+          <span class="panel-toggle__title">Toujours dans mes placards</span>
+          <span class="panel-toggle__summary" id="staples-summary"></span>
+        </span>
+        <span class="chevron" aria-hidden="true">›</span>
+      </button>
+      <div id="staples-content" class="panel-content" hidden>
+        <div id="staples-list" class="staples-list"></div>
+      </div>
+    </div>
+
+    <div class="panel" id="forbidden-panel">
+      <button type="button" class="panel-toggle" id="forbidden-toggle" aria-expanded="false" aria-controls="forbidden-content">
+        <span class="panel-toggle__label">
+          <span class="panel-toggle__title">À exclure</span>
+          <span class="panel-toggle__summary" id="forbidden-summary"></span>
+        </span>
+        <span class="chevron" aria-hidden="true">›</span>
+      </button>
+      <div id="forbidden-content" class="panel-content" hidden>
+        <div class="input-row">
+          <label for="forbidden-input" class="visually-hidden">Ingrédients à exclure</label>
+          <input id="forbidden-input" type="text" autocomplete="off" placeholder="Ex : poisson, coriandre, porc..." />
+          <button id="add-forbidden-btn" type="button" class="btn btn--secondary">Ajouter</button>
+        </div>
+        <ul id="forbidden-chips" class="chips chips--forbidden" aria-label="Ingrédients exclus"></ul>
+      </div>
+    </div>
+
+    <div class="panel" id="filters-panel">
+      <button type="button" class="panel-toggle" id="filters-toggle" aria-expanded="false" aria-controls="filters-content">
+        <span class="panel-toggle__label">
+          <span class="panel-toggle__title">Filtres</span>
+          <span class="panel-toggle__summary" id="filters-summary"></span>
+        </span>
+        <span class="chevron" aria-hidden="true">›</span>
+      </button>
+      <div id="filters-content" class="panel-content" hidden>
+        <div class="filter-grid">
+          <label class="filter-field">
+            Personnes
+            <select id="filter-servings">
+              <option value="">Peu importe</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4" selected>4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+            </select>
+          </label>
+          <label class="filter-field">
+            Temps maximum
+            <select id="filter-time">
+              <option value="">Peu importe</option>
+              <option value="1200">20 min</option>
+              <option value="1800">30 min</option>
+              <option value="2700">45 min</option>
+              <option value="3600">1 h</option>
+            </select>
+          </label>
+          <label class="filter-field">
+            Difficulté
+            <select id="filter-difficulty">
+              <option value="">Peu importe</option>
+              <option value="Facile">Facile</option>
+              <option value="Moyen">Moyen</option>
+            </select>
+          </label>
+          <label class="filter-field">
+            Type
+            <select id="filter-category">
+              <option value="">Peu importe</option>
+              <option value="Entrée">Entrée</option>
+              <option value="Plat">Plat</option>
+              <option value="Dessert">Dessert</option>
+              <option value="Soupe">Soupe</option>
+              <option value="Sauce">Sauce</option>
+              <option value="Apéritif">Apéritif</option>
+            </select>
+          </label>
+          <label class="filter-field">
+            Thermomix
+            <select id="filter-thermomix">
+              <option value="">Peu importe</option>
+              <option value="TM7" selected>TM7</option>
+              <option value="TM6">TM6</option>
+              <option value="TM5">TM5</option>
+            </select>
+          </label>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="panel" id="favorites-panel">
     <button type="button" class="panel-toggle" id="favorites-toggle" aria-expanded="false" aria-controls="favorites-content">
-      <span>Mes favoris</span>
+      <span class="panel-toggle__label"><span class="panel-toggle__title">Mes favoris</span></span>
       <span class="chevron" aria-hidden="true">›</span>
     </button>
     <div id="favorites-content" class="panel-content" hidden>
@@ -182,7 +241,7 @@
 
   <section class="panel" id="history-panel">
     <button type="button" class="panel-toggle" id="history-toggle" aria-expanded="false" aria-controls="history-content">
-      <span>Historique</span>
+      <span class="panel-toggle__label"><span class="panel-toggle__title">Historique</span></span>
       <span class="chevron" aria-hidden="true">›</span>
     </button>
     <div id="history-content" class="panel-content" hidden>
@@ -191,7 +250,9 @@
       <button id="clear-history-btn" type="button" class="btn btn--text">Effacer l'historique</button>
     </div>
   </section>
-</main>
+
+</aside>
+</div>
 
 <footer class="app-footer">
   <p>FrigoMix est un projet indépendant et n'est ni affilié, ni sponsorisé, ni approuvé par Vorwerk ou Cookidoo®. Thermomix® et Cookidoo® sont des marques de leurs propriétaires respectifs.</p>

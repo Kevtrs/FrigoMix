@@ -1,13 +1,13 @@
 {
-  "name": "FrigoMix — Dis-moi ce que tu as, je te dis quoi cuisiner",
+  "name": "FrigoMix — Ton frigo a déjà de bonnes idées",
   "short_name": "FrigoMix",
   "description": "Ajoute ce que tu as dans le frigo et les placards, FrigoMix te dit quelles recettes Cookidoo tu peux préparer avec ton Thermomix.",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
   "orientation": "portrait",
-  "background_color": "#f6f3ec",
-  "theme_color": "#f6f3ec",
+  "background_color": "#FFF8EC",
+  "theme_color": "#FFF8EC",
   "lang": "fr-FR",
   "icons": [
     { "src": "assets/icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },

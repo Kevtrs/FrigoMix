@@ -1,7 +1,7 @@
 // Service worker minimal : app shell en cache pour un fonctionnement
 // hors-ligne complet, données recettes en stale-while-revalidate pour
 // profiter des mises à jour hebdomadaires sans bloquer l'affichage.
-const CACHE_VERSION = 'frigomix-v1';
+const CACHE_VERSION = 'frigomix-v3';
 const APP_SHELL = [
   './',
   './index.html',
@@ -18,8 +18,16 @@ const APP_SHELL = [
   './js/providers/local-index-provider.js',
   './js/providers/cookidoo-search-link-provider.js',
   './assets/icons/icon.svg',
+  './assets/fonts/dynapuff-500.woff2',
+  './assets/fonts/dynapuff-600.woff2',
+  './assets/fonts/dynapuff-700.woff2',
+  './assets/fonts/manrope-400.woff2',
+  './assets/fonts/manrope-500.woff2',
+  './assets/fonts/manrope-600.woff2',
+  './assets/fonts/manrope-700.woff2',
+  './assets/fonts/manrope-800.woff2',
   './data/mock-recipes.json',
-  './data/recipes-fr.json',
+  './data/recipes-fr.compact.json',
 ];
 
 self.addEventListener('install', (event) => {

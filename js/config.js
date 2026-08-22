@@ -2,7 +2,7 @@
 // l'app partout (titre, manifest PWA généré dynamiquement, footer...).
 export const CONFIG = {
   APP_NAME: 'FrigoMix',
-  APP_TAGLINE: "Dis-moi ce que tu as, je te dis quoi cuisiner.",
+  APP_TAGLINE: 'Ton frigo a déjà de bonnes idées.',
 
   // 'mock' (données de démo) | 'local-index' (data/recipes-fr.json, alimenté
   // chaque semaine par .github/workflows/update-recipes.yml) | 'cookidoo-public'

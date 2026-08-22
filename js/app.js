@@ -1,7 +1,7 @@
 import { CONFIG } from './config.js';
 import { suggestIngredients, normalizeIngredient, QUICK_SUGGESTIONS } from './ingredients.js';
 import { parseIngredientInput } from './parser.js';
-import { findMatchingRecipes, compatibilityLabel } from './matching.js';
+import { findMatchingRecipes } from './matching.js';
 import * as storage from './storage.js';
 import { loadRecipesWithFallback, buildCookidooSearchUrl } from './providers/index.js';
 
@@ -38,6 +38,14 @@ const favoritesEmptyEl = $('favorites-empty');
 const historyListEl = $('history-list');
 const historyEmptyEl = $('history-empty');
 const toastEl = $('toast');
+const recipeCountEl = $('recipe-count');
+const resultsHeader = $('results-header');
+const resultsHeaderTitle = $('results-header-title');
+const resultsHeaderRecap = $('results-header-recap');
+const staplesSummaryEl = $('staples-summary');
+const forbiddenSummaryEl = $('forbidden-summary');
+const filtersSummaryEl = $('filters-summary');
+const filtersContent = $('filters-content');
 
 // --- Utilitaires UI ---
 
@@ -116,9 +124,13 @@ function renderPantryChips() {
   for (const item of pantry) {
     const li = document.createElement('li');
     li.className = 'chip' + (item.priority ? ' is-priority' : '');
+    const priorityLabel = item.priority ? 'Ne plus prioriser' : 'À finir en priorité';
     li.innerHTML = `
       <button type="button" class="chip__priority" data-action="priority" data-name="${item.normalized}"
-        aria-pressed="${item.priority}" aria-label="Marquer ${item.normalized} à finir en priorité">⚠️</button>
+        aria-pressed="${item.priority}" aria-label="${priorityLabel} : ${item.normalized}" title="${priorityLabel}">
+        <span class="chip__priority-label">À finir</span>
+        <span aria-hidden="true">${item.priority ? '★' : '☆'}</span>
+      </button>
       <span>${item.normalized}</span>
       <button type="button" class="chip__remove" data-action="remove-pantry" data-name="${item.normalized}"
         aria-label="Retirer ${item.normalized}">×</button>
@@ -160,6 +172,13 @@ function renderForbiddenChips() {
     `;
     forbiddenChipsEl.appendChild(li);
   }
+  updateForbiddenSummary();
+}
+
+function updateForbiddenSummary() {
+  forbiddenSummaryEl.textContent = forbidden.length
+    ? `${forbidden.length} exclusion${forbidden.length > 1 ? 's' : ''}`
+    : 'Aucune';
 }
 
 forbiddenChipsEl.addEventListener('click', (e) => {
@@ -248,6 +267,7 @@ function renderStaples() {
       </label>
     `;
   }).join('');
+  updateStaplesSummary();
 }
 staplesListEl.addEventListener('change', (e) => {
   const input = e.target;
@@ -257,6 +277,12 @@ staplesListEl.addEventListener('change', (e) => {
   storage.setEnabledStaples([...enabledStaples]);
   renderStaples();
 });
+
+function updateStaplesSummary() {
+  staplesSummaryEl.textContent = enabledStaples.size
+    ? `${enabledStaples.size} produit${enabledStaples.size > 1 ? 's' : ''} de base`
+    : 'Aucun';
+}
 
 // --- Filtres ---
 
@@ -280,10 +306,27 @@ function applyFilters(recipes, filters) {
   });
 }
 
+const TIME_LABELS = { '1200': '20 min', '1800': '30 min', '2700': '45 min', '3600': '1 h' };
+function updateFiltersSummary() {
+  const f = getFilters();
+  const parts = [];
+  if (f.maxTime) parts.push(`Moins de ${TIME_LABELS[String(f.maxTime)] || f.maxTime + 's'}`);
+  if (f.difficulty) parts.push(f.difficulty);
+  if (f.category) parts.push(f.category);
+  if (f.servings) parts.push(`${f.servings} pers.`);
+  filtersSummaryEl.textContent = parts.length ? parts.join(' · ') : 'Peu importe';
+}
+filtersContent.addEventListener('change', updateFiltersSummary);
+
 // --- Recherche ---
 
 function updateSearchButtonState() {
   searchBtn.disabled = pantry.length === 0;
+  if (pantry.length === 0) {
+    searchBtn.textContent = 'Ajoute des ingrédients';
+  } else {
+    searchBtn.textContent = `Voir les recettes avec ${pantry.length === 1 ? 'mon ingrédient' : `mes ${pantry.length} ingrédients`}`;
+  }
 }
 
 function buildPantrySets() {
@@ -304,6 +347,7 @@ async function runSearch() {
   resultsList.innerHTML = '';
   loadMoreRow.hidden = true;
   cookidooFallbackBtn.hidden = true;
+  resultsHeader.hidden = true;
 
   await new Promise((resolve) => setTimeout(resolve, 150)); // laisse le skeleton s'afficher
 
@@ -327,52 +371,82 @@ async function runSearch() {
   renderResults();
 }
 
+// Message "humain" plutôt qu'un pourcentage brut en avant (le score reste
+// disponible, affiché discrètement dans les métadonnées).
+function verdictForMatch(match) {
+  if (!match) return '';
+  if (match.priorityMatches.length > 0) {
+    return `Idéal pour finir : ${match.priorityMatches.join(', ')}`;
+  }
+  if (match.missingIngredients.length === 0) return "Tu as tout ce qu'il faut";
+  if (match.missingIngredients.length === 1) return `Il te manque juste : ${match.missingIngredients[0]}`;
+  if (match.missingIngredients.length <= 3) return `${match.missingIngredients.length} petites courses et c'est bon`;
+  return 'Possible avec quelques courses';
+}
+
+const CATEGORY_PLACEHOLDER = {
+  Dessert: 'placeholder--warm',
+  Entrée: 'placeholder--accent',
+  Soupe: 'placeholder--accent',
+  Sauce: 'placeholder--accent',
+  Apéritif: 'placeholder--accent',
+};
+function placeholderHtml(category) {
+  const variant = CATEGORY_PLACEHOLDER[category] || 'placeholder--brand';
+  return `
+    <div class="recipe-card__placeholder ${variant}">
+      <svg viewBox="0 0 48 48" fill="none" aria-hidden="true">
+        <path d="M27 5c8 3 14 11 12 20-9 3-18-1-21-9-2-6 2-13 9-11Z" fill="currentColor"/>
+        <path d="M18 15c6 4 13 5 19 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.55"/>
+      </svg>
+    </div>`;
+}
+
 function recipeCardHtml({ recipe, match }, { compact = false } = {}) {
   const image = resolveImage(recipe);
-  const label = match ? compatibilityLabel(match.score) : null;
   const isFav = storage.isFavorite(recipe.id);
   const time = formatTime(recipe.totalTime);
+  const scorePct = match ? Math.round(match.score * 100) : null;
 
-  const haveList = match
-    ? `<div class="recipe-card__section"><strong>Vous avez</strong><ul class="tag-list tag-list--have">${match.matchedIngredients
-        .slice(0, 6)
-        .map((i) => `<li>${i}</li>`)
-        .join('')}</ul></div>`
+  const missingHtml = match && match.missingIngredients.length
+    ? `<p class="recipe-card__missing">${match.missingIngredients.map((i) => `<span class="tag">${i}</span>`).join('')}</p>`
     : '';
-  const missingList = match && match.missingIngredients.length
-    ? `<div class="recipe-card__section"><strong>Il vous manque</strong><ul class="tag-list tag-list--missing">${match.missingIngredients
-        .map((i) => `<li>${i}</li>`)
-        .join('')}</ul></div>`
+
+  const haveHtml = match && match.matchedIngredients.length
+    ? `<details class="recipe-card__have">
+        <summary>Ce que tu utilises (${match.matchedIngredients.length})</summary>
+        <ul class="tag-list">${match.matchedIngredients.map((i) => `<li>${i}</li>`).join('')}</ul>
+      </details>`
     : '';
+
+  const verdict = match ? verdictForMatch(match) : recipe.name;
 
   return `
     <li class="recipe-card" data-id="${recipe.id}">
-      <div class="recipe-card__top">
-        ${image ? `<img class="recipe-card__image" src="${image}" alt="" loading="lazy" />` : ''}
-        <div style="flex:1; min-width:0;">
-          <div class="recipe-card__title-row">
-            <h3 class="recipe-card__name">${recipe.name}</h3>
-            <button type="button" class="favorite-btn" data-action="favorite" data-id="${recipe.id}"
-              aria-pressed="${isFav}" aria-label="${isFav ? 'Retirer des favoris' : 'Ajouter aux favoris'}">${isFav ? '♥' : '♡'}</button>
-          </div>
-          ${label ? `<span class="score-badge">${Math.round(match.score * 100)} % · ${label}</span>` : ''}
-          <div class="recipe-card__meta">
-            ${time ? `<span>⏱ ${time}</span>` : ''}
-            ${recipe.rating ? `<span>⭐ ${recipe.rating.toFixed(1)}</span>` : ''}
-            ${recipe.servings ? `<span>👥 ${recipe.servings} personnes</span>` : ''}
-          </div>
+      <div class="recipe-card__media">
+        ${image ? `<img src="${image}" alt="" loading="lazy" />` : placeholderHtml(recipe.category)}
+        <button type="button" class="favorite-btn" data-action="favorite" data-id="${recipe.id}"
+          aria-pressed="${isFav}" aria-label="${isFav ? 'Retirer des favoris' : 'Ajouter aux favoris'}">${isFav ? '♥' : '♡'}</button>
+      </div>
+      <div class="recipe-card__body">
+        <p class="recipe-card__verdict">${verdict}</p>
+        <p class="recipe-card__name">${recipe.name}</p>
+        ${missingHtml}
+        <p class="recipe-card__meta">
+          ${time ? `<span>⏱ ${time}</span>` : ''}
+          ${recipe.rating ? `<span>⭐ ${recipe.rating.toFixed(1)}</span>` : ''}
+          ${recipe.servings ? `<span>👥 ${recipe.servings}</span>` : ''}
+          ${scorePct !== null ? `<span>${scorePct} % compatible</span>` : ''}
+        </p>
+        ${haveHtml}
+        <div class="thermomix-search">
+          <p class="thermomix-search__name">Thermomix : « ${recipe.name} »</p>
+          <button type="button" class="thermomix-search__copy" data-action="copy" data-name="${recipe.name}">Copier</button>
         </div>
-      </div>
-      ${haveList}
-      ${missingList}
-      <div class="thermomix-search">
-        <p class="thermomix-search__label">À rechercher sur ton Thermomix</p>
-        <p class="thermomix-search__name">${recipe.name}</p>
-        <button type="button" class="btn btn--secondary btn--small" data-action="copy" data-name="${recipe.name}">Copier le nom</button>
-      </div>
-      <div class="recipe-card__actions">
-        <a class="btn btn--primary" href="${recipe.url}" target="_blank" rel="noopener">Voir sur Cookidoo</a>
-        ${compact ? '' : `<button type="button" class="btn btn--secondary" data-action="cooked" data-id="${recipe.id}">Je la fais</button>`}
+        <div class="recipe-card__actions">
+          <a class="btn btn--primary" href="${recipe.url}" target="_blank" rel="noopener">Voir la recette</a>
+          ${compact ? '' : `<button type="button" class="btn btn--secondary" data-action="cooked" data-id="${recipe.id}">Je la cuisine</button>`}
+        </div>
       </div>
     </li>
   `;
@@ -382,6 +456,12 @@ function renderResults() {
   const slice = currentResults.slice(0, visibleCount);
   resultsList.innerHTML = slice.map((entry) => recipeCardHtml(entry)).join('');
   loadMoreRow.hidden = visibleCount >= currentResults.length;
+
+  const count = currentResults.length;
+  resultsHeaderTitle.textContent = `${count} idée${count > 1 ? 's' : ''} avec ce que tu as`;
+  const names = pantry.map((i) => i.normalized);
+  resultsHeaderRecap.textContent = names.length ? `Avec : ${names.join(', ')}` : '';
+  resultsHeader.hidden = false;
 }
 
 loadMoreBtn.addEventListener('click', () => {
@@ -489,18 +569,36 @@ function wireCollapsibles() {
   setupCollapsible('history-toggle', 'history-content');
 }
 
+// Accès rapides de l'en-tête : ouvrent le panneau correspondant (s'il est
+// replié) avant de laisser le navigateur faire défiler jusqu'à l'ancre.
+function wireHeaderShortcut(linkId, toggleId) {
+  $(linkId).addEventListener('click', () => {
+    const toggle = $(toggleId);
+    if (toggle.getAttribute('aria-expanded') !== 'true') toggle.click();
+  });
+}
+
 async function init() {
   document.title = `${CONFIG.APP_NAME} — ${CONFIG.APP_TAGLINE}`;
   wireCollapsibles();
+  wireHeaderShortcut('header-favorites-link', 'favorites-toggle');
+  wireHeaderShortcut('header-history-link', 'history-toggle');
   renderQuickChips();
   renderStaples();
   renderPantryChips();
   renderHistory();
   updateSearchButtonState();
+  updateForbiddenSummary();
+  updateFiltersSummary();
 
   const { recipes, provider } = await loadRecipesWithFallback('.');
   allRecipes = recipes;
   log(`Recettes chargées (${provider}) :`, recipes.length);
+  if (recipes.length > 0) {
+    const formatted = recipes.length.toLocaleString('fr-FR');
+    recipeCountEl.textContent = `${formatted} recette${recipes.length > 1 ? 's' : ''} Cookidoo indexée${recipes.length > 1 ? 's' : ''}`;
+    recipeCountEl.hidden = false;
+  }
   renderFavorites();
 
   if ('serviceWorker' in navigator) {
