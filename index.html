@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>FrigoMix — Dis-moi ce que tu as, je te dis quoi cuisiner</title>
+<meta name="description" content="Ajoute ce que tu as dans le frigo et les placards, FrigoMix te dit quelles recettes Cookidoo tu peux préparer avec ton Thermomix." />
+<meta name="theme-color" content="#f6f3ec" media="(prefers-color-scheme: light)" />
+<meta name="theme-color" content="#1c1c1a" media="(prefers-color-scheme: dark)" />
+<link rel="manifest" href="manifest.json" />
+<link rel="icon" href="assets/icons/icon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="assets/icons/icon.svg" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<a class="skip-link" href="#main">Aller au contenu</a>
+
+<header class="app-header">
+  <div class="app-header__inner">
+    <p class="app-name">FrigoMix</p>
+    <p class="app-tagline">Qu'est-ce qu'on mange ?</p>
+  </div>
+</header>
+
+<main id="main">
+  <section class="intro" aria-hidden="false">
+    <p class="intro__text">Ajoute ce que tu as dans le frigo et les placards.</p>
+  </section>
+
+  <section class="panel" aria-labelledby="add-heading">
+    <h2 id="add-heading" class="visually-hidden">Ajouter des ingrédients</h2>
+
+    <div class="input-row">
+      <label for="ingredient-input" class="visually-hidden">Ajouter un ou plusieurs ingrédients</label>
+      <input
+        id="ingredient-input"
+        type="text"
+        inputmode="text"
+        autocomplete="off"
+        placeholder="Ex : poulet, champignons, crème, parmesan..."
+        aria-describedby="ingredient-help"
+      />
+      <button id="add-ingredient-btn" type="button" class="btn btn--secondary">Ajouter</button>
+    </div>
+    <p id="ingredient-help" class="field-help">Entrée ou virgule pour valider. Tu peux aussi écrire une phrase entière.</p>
+    <ul id="suggestions-list" class="suggestions-list" hidden role="listbox" aria-label="Suggestions"></ul>
+
+    <div class="quick-chips" id="quick-chips" aria-label="Suggestions rapides"></div>
+
+    <ul id="pantry-chips" class="chips" aria-label="Ingrédients ajoutés"></ul>
+  </section>
+
+  <section class="panel" id="staples-panel">
+    <button type="button" class="panel-toggle" id="staples-toggle" aria-expanded="false" aria-controls="staples-content">
+      <span>J'ai généralement chez moi</span>
+      <span class="chevron" aria-hidden="true">›</span>
+    </button>
+    <div id="staples-content" class="panel-content" hidden>
+      <div id="staples-list" class="staples-list"></div>
+    </div>
+  </section>
+
+  <section class="panel" id="forbidden-panel">
+    <button type="button" class="panel-toggle" id="forbidden-toggle" aria-expanded="false" aria-controls="forbidden-content">
+      <span>Je ne veux pas</span>
+      <span class="chevron" aria-hidden="true">›</span>
+    </button>
+    <div id="forbidden-content" class="panel-content" hidden>
+      <div class="input-row">
+        <label for="forbidden-input" class="visually-hidden">Ingrédients à exclure</label>
+        <input id="forbidden-input" type="text" autocomplete="off" placeholder="Ex : poisson, coriandre, porc..." />
+        <button id="add-forbidden-btn" type="button" class="btn btn--secondary">Ajouter</button>
+      </div>
+      <ul id="forbidden-chips" class="chips chips--forbidden" aria-label="Ingrédients exclus"></ul>
+    </div>
+  </section>
+
+  <section class="panel" id="filters-panel">
+    <button type="button" class="panel-toggle" id="filters-toggle" aria-expanded="false" aria-controls="filters-content">
+      <span>Filtres</span>
+      <span class="chevron" aria-hidden="true">›</span>
+    </button>
+    <div id="filters-content" class="panel-content" hidden>
+      <div class="filter-grid">
+        <label class="filter-field">
+          Personnes
+          <select id="filter-servings">
+            <option value="">Peu importe</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4" selected>4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+          </select>
+        </label>
+        <label class="filter-field">
+          Temps maximum
+          <select id="filter-time">
+            <option value="">Peu importe</option>
+            <option value="1200">20 min</option>
+            <option value="1800">30 min</option>
+            <option value="2700">45 min</option>
+            <option value="3600">1 h</option>
+          </select>
+        </label>
+        <label class="filter-field">
+          Difficulté
+          <select id="filter-difficulty">
+            <option value="">Peu importe</option>
+            <option value="Facile">Facile</option>
+            <option value="Moyen">Moyen</option>
+          </select>
+        </label>
+        <label class="filter-field">
+          Type
+          <select id="filter-category">
+            <option value="">Peu importe</option>
+            <option value="Entrée">Entrée</option>
+            <option value="Plat">Plat</option>
+            <option value="Dessert">Dessert</option>
+            <option value="Soupe">Soupe</option>
+            <option value="Sauce">Sauce</option>
+            <option value="Apéritif">Apéritif</option>
+          </select>
+        </label>
+        <label class="filter-field">
+          Thermomix
+          <select id="filter-thermomix">
+            <option value="">Peu importe</option>
+            <option value="TM7" selected>TM7</option>
+            <option value="TM6">TM6</option>
+            <option value="TM5">TM5</option>
+          </select>
+        </label>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-row">
+    <button id="search-btn" type="button" class="btn btn--primary" disabled>Trouver mes recettes</button>
+    <button id="cookidoo-fallback-btn" type="button" class="btn btn--ghost" hidden>Rechercher ces ingrédients sur Cookidoo</button>
+  </div>
+
+  <section id="results-section" aria-live="polite">
+    <div id="loading-state" class="state-block" hidden>
+      <div class="skeleton-row"><div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div></div>
+      <p>Je regarde ce qu'on peut cuisiner…</p>
+    </div>
+
+    <div id="empty-state" class="state-block">
+      <p class="state-emoji" aria-hidden="true">🧊</p>
+      <p class="state-title">Qu'est-ce qu'il reste dans le frigo ?</p>
+      <p class="state-text">Ajoute quelques ingrédients et je cherche ce que tu peux préparer avec ton Thermomix.</p>
+    </div>
+
+    <div id="no-results-state" class="state-block" hidden>
+      <p class="state-title">On n'a rien trouvé de vraiment convaincant avec tout ça.</p>
+      <ul class="state-suggestions">
+        <li>Retire un ingrédient obligatoire</li>
+        <li>Augmente le temps disponible</li>
+        <li>Autorise davantage d'ingrédients manquants</li>
+      </ul>
+    </div>
+
+    <ul id="results-list" class="results-list"></ul>
+
+    <div id="load-more-row" class="load-more-row" hidden>
+      <button id="load-more-btn" type="button" class="btn btn--secondary">Afficher plus</button>
+    </div>
+  </section>
+
+  <section class="panel" id="favorites-panel">
+    <button type="button" class="panel-toggle" id="favorites-toggle" aria-expanded="false" aria-controls="favorites-content">
+      <span>Mes favoris</span>
+      <span class="chevron" aria-hidden="true">›</span>
+    </button>
+    <div id="favorites-content" class="panel-content" hidden>
+      <ul id="favorites-list" class="results-list results-list--compact"></ul>
+      <p id="favorites-empty" class="field-help">Aucun favori pour le moment.</p>
+    </div>
+  </section>
+
+  <section class="panel" id="history-panel">
+    <button type="button" class="panel-toggle" id="history-toggle" aria-expanded="false" aria-controls="history-content">
+      <span>Historique</span>
+      <span class="chevron" aria-hidden="true">›</span>
+    </button>
+    <div id="history-content" class="panel-content" hidden>
+      <ul id="history-list" class="history-list"></ul>
+      <p id="history-empty" class="field-help">Aucune recherche récente.</p>
+      <button id="clear-history-btn" type="button" class="btn btn--text">Effacer l'historique</button>
+    </div>
+  </section>
+</main>
+
+<footer class="app-footer">
+  <p>FrigoMix est un projet indépendant et n'est ni affilié, ni sponsorisé, ni approuvé par Vorwerk ou Cookidoo®. Thermomix® et Cookidoo® sont des marques de leurs propriétaires respectifs.</p>
+</footer>
+
+<div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+
+<script type="module" src="js/app.js"></script>
+</body>
+</html>

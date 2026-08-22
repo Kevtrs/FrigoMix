@@ -1,0 +1,12 @@
+{
+  "name": "frigomix",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Dis-moi ce que tu as, je te dis quoi cuisiner. Découverte de recettes Cookidoo à partir de ce qu'il y a dans le frigo.",
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/*.test.js",
+    "update-recipes": "node scripts/update-recipes.mjs"
+  },
+  "license": "MIT"
+}

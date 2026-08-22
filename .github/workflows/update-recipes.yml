@@ -1,0 +1,41 @@
+name: Mise à jour hebdomadaire de l'index de recettes
+
+on:
+  schedule:
+    # Chaque lundi à 04h10 UTC — hors heures de pointe, une seule fois par
+    # semaine (voir docs/COOKIDOO_RESEARCH.md pour la justification de cette
+    # fréquence : on évite de solliciter cookidoo.fr plus que nécessaire).
+    - cron: '10 4 * * 1'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-recipes
+  cancel-in-progress: false
+
+jobs:
+  update-recipes:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Générer data/recipes-fr.json
+        run: node scripts/update-recipes.mjs
+
+      - name: Committer si l'index a changé
+        run: |
+          if git diff --quiet -- data/recipes-fr.json; then
+            echo "Aucun changement dans l'index de recettes."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/recipes-fr.json
+          git commit -m "chore: mise à jour hebdomadaire de l'index de recettes"
+          git push

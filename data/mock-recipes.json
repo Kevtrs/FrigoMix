@@ -1,0 +1,242 @@
+[
+  {
+    "id": "mock-001",
+    "name": "Risotto crémeux au poulet et champignons",
+    "ingredients": ["poulet", "champignon", "riz", "parmesan", "oignon", "bouillon", "vin blanc", "beurre", "sel", "poivre"],
+    "rating": 4.7, "numberOfRatings": 350, "totalTime": 2400, "servings": 4,
+    "difficulty": "Moyen", "category": "Plat", "url": "https://cookidoo.fr/search/fr-FR?q=Risotto%20cr%C3%A9meux%20au%20poulet%20et%20champignons",
+    "thermomixModels": ["TM6", "TM7"]
+  },
+  {
+    "id": "mock-002",
+    "name": "Poulet au curry et lait de coco",
+    "ingredients": ["poulet", "curry", "oignon", "ail", "gingembre", "riz", "sel", "huile"],
+    "rating": 4.6, "numberOfRatings": 812, "totalTime": 2100, "servings": 4,
+    "difficulty": "Facile", "category": "Plat", "url": "https://cookidoo.fr/search/fr-FR?q=Poulet%20au%20curry%20et%20lait%20de%20coco",
+    "thermomixModels": ["TM5", "TM6", "TM7"]
+  },
+  {
+    "id": "mock-003",
+    "name": "Saumon à l'unilatérale, riz et brocoli",
+    "ingredients": ["saumon", "riz", "brocoli", "citron", "huile d'olive", "sel", "poivre"],
+    "rating": 4.5, "numberOfRatings": 240, "totalTime": 1500, "servings": 2,
+    "difficulty": "Facile", "category": "Plat", "url": "https://cookidoo.fr/search/fr-FR?q=Saumon%20unilat%C3%A9rale%20riz%20brocoli",
+    "thermomixModels": ["TM6", "TM7"]
+  },
+  {
+    "id": "mock-004",
+    "name": "Gratin de courgettes au chèvre",
+    "ingredients": ["courgette", "chèvre", "crème fraîche", "œuf", "ail", "sel", "poivre"],
+    "rating": 4.4, "numberOfRatings": 190, "totalTime": 3000, "servings": 4,
+    "difficulty": "Facile", "category": "Plat", "url": "https://cookidoo.fr/search/fr-FR?q=Gratin%20de%20courgettes%20au%20ch%C3%A8vre",
+    "thermomixModels": ["TM6", "TM7"]
+  },
+  {
+    "id": "mock-005",
+    "name": "Bœuf bourguignon",
+    "ingredients": ["bœuf", "carotte", "oignon", "vin blanc", "ail", "bouillon", "farine", "sel", "poivre"],
+    "rating": 4.8, "numberOfRatings": 1520, "totalTime": 10800, "servings": 6,
+    "difficulty": "Moyen", "category": "Plat", "url": "https://cookidoo.fr/search/fr-FR?q=B%C5%93uf%20bourguignon",
+    "thermomixModels": ["TM6", "TM7"]
+  },
+  {
+    "id": "mock-006",
+    "name": "Pâtes carbonara",
+    "ingredients": ["pâtes", "lardons", "œuf", "parmesan", "poivre", "sel"],
+    "rating": 4.7, "numberOfRatings": 980, "totalTime": 1200, "servings": 4,
+    "difficulty": "Facile", "category": "Plat", "url": "https://cookidoo.fr/search/fr-FR?q=P%C3%A2tes%20carbonara",
+    "thermomixModels": ["TM5", "TM6", "TM7"]
+  },
+  {
+    "id": "mock-007",
+    "name": "Soupe de courgette et carotte",
+    "ingredients": ["courgette", "carotte", "oignon", "bouillon", "crème fraîche", "sel", "poivre"],
+    "rating": 4.6, "numberOfRatings": 430, "totalTime": 1800, "servings": 4,
+    "difficulty": "Facile", "category": "Soupe", "url": "https://cookidoo.fr/search/fr-FR?q=Soupe%20de%20courgette%20et%20carotte",
+    "thermomixModels": ["TM5", "TM6", "TM7"]
+  },
+  {
+    "id": "mock-008",
+    "name": "Tomates farcies au riz",
+    "ingredients": ["tomate", "riz", "oignon", "ail", "persil", "huile d'olive", "sel", "poivre"],
+    "rating": 4.3, "numberOfRatings": 150, "totalTime": 3300, "servings": 4,
+    "difficulty": "Moyen", "category": "Plat", "url": "https://cookidoo.fr/search/fr-FR?q=Tomates%20farcies%20au%20riz",
+    "thermomixModels": ["TM6", "TM7"]
+  },
+  {
+    "id": "mock-009",
+    "name": "Quiche aux lardons et emmental",
+    "ingredients": ["pâte", "lardons", "emmental", "œuf", "crème fraîche", "sel", "poivre"],
+    "rating": 4.5, "numberOfRatings": 610, "totalTime": 2700, "servings": 6,
+    "difficulty": "Facile", "category": "Plat", "url": "https://cookidoo.fr/search/fr-FR?q=Quiche%20aux%20lardons%20et%20emmental",
+    "thermomixModels": ["TM5", "TM6", "TM7"]
+  },
+  {
+    "id": "mock-010",
+    "name": "Curry de crevettes et lait de coco",
+    "ingredients": ["crevette", "oignon", "ail", "gingembre", "curry", "riz", "coriandre", "sel"],
+    "rating": 4.6, "numberOfRatings": 275, "totalTime": 1800, "servings": 4,
+    "difficulty": "Facile", "category": "Plat", "url": "https://cookidoo.fr/search/fr-FR?q=Curry%20de%20crevettes",
+    "thermomixModels": ["TM6", "TM7"]
+  },
+  {
+    "id": "mock-011",
+    "name": "Poêlée de champignons à l'ail et persil",
+    "ingredients": ["champignon", "ail", "persil", "beurre", "sel", "poivre"],
+    "rating": 4.4, "numberOfRatings": 320, "totalTime": 900, "servings": 4,
+    "difficulty": "Facile", "category": "Entrée", "url": "https://cookidoo.fr/search/fr-FR?q=Po%C3%AAl%C3%A9e%20de%20champignons",
+    "thermomixModels": ["TM5", "TM6", "TM7"]
+  },
+  {
+    "id": "mock-012",
+    "name": "Dahl de lentilles corail",
+    "ingredients": ["lentilles", "oignon", "ail", "gingembre", "curry", "bouillon", "sel"],
+    "rating": 4.6, "numberOfRatings": 540, "totalTime": 2100, "servings": 4,
+    "difficulty": "Facile", "category": "Plat", "url": "https://cookidoo.fr/search/fr-FR?q=Dahl%20de%20lentilles%20corail",
+    "thermomixModels": ["TM6", "TM7"]
+  },
+  {
+    "id": "mock-013",
+    "name": "Poulet rôti aux pommes de terre",
+    "ingredients": ["poulet", "pomme de terre", "ail", "thym", "huile d'olive", "sel", "poivre"],
+    "rating": 4.7, "numberOfRatings": 690, "totalTime": 5400, "servings": 4,
+    "difficulty": "Facile", "category": "Plat", "url": "https://cookidoo.fr/search/fr-FR?q=Poulet%20r%C3%B4ti",
+    "thermomixModels": ["TM6", "TM7"]
+  },
+  {
+    "id": "mock-014",
+    "name": "Velouté de potiron",
+    "ingredients": ["potiron", "oignon", "bouillon", "crème fraîche", "sel", "poivre"],
+    "rating": 4.7, "numberOfRatings": 890, "totalTime": 1800, "servings": 4,
+    "difficulty": "Facile", "category": "Soupe", "url": "https://cookidoo.fr/search/fr-FR?q=Velout%C3%A9%20de%20potiron",
+    "thermomixModels": ["TM5", "TM6", "TM7"]
+  },
+  {
+    "id": "mock-015",
+    "name": "Chili con carne",
+    "ingredients": ["steak haché", "haricot vert", "tomate", "oignon", "ail", "paprika", "cumin", "sel"],
+    "rating": 4.5, "numberOfRatings": 410, "totalTime": 3600, "servings": 6,
+    "difficulty": "Moyen", "category": "Plat", "url": "https://cookidoo.fr/search/fr-FR?q=Chili%20con%20carne",
+    "thermomixModels": ["TM6", "TM7"]
+  },
+  {
+    "id": "mock-016",
+    "name": "Salade de quinoa, feta et tomate",
+    "ingredients": ["quinoa", "feta", "tomate", "concombre", "huile d'olive", "citron", "sel"],
+    "rating": 4.4, "numberOfRatings": 260, "totalTime": 1200, "servings": 4,
+    "difficulty": "Facile", "category": "Entrée", "url": "https://cookidoo.fr/search/fr-FR?q=Salade%20de%20quinoa%20feta",
+    "thermomixModels": ["TM6", "TM7"]
+  },
+  {
+    "id": "mock-017",
+    "name": "Cabillaud vapeur, sauce citron",
+    "ingredients": ["cabillaud", "citron", "beurre", "persil", "sel", "poivre"],
+    "rating": 4.3, "numberOfRatings": 140, "totalTime": 1500, "servings": 2,
+    "difficulty": "Facile", "category": "Plat", "url": "https://cookidoo.fr/search/fr-FR?q=Cabillaud%20vapeur",
+    "thermomixModels": ["TM6", "TM7"]
+  },
+  {
+    "id": "mock-018",
+    "name": "Hachis parmentier",
+    "ingredients": ["steak haché", "pomme de terre", "oignon", "beurre", "lait", "sel", "poivre"],
+    "rating": 4.5, "numberOfRatings": 720, "totalTime": 3600, "servings": 4,
+    "difficulty": "Moyen", "category": "Plat", "url": "https://cookidoo.fr/search/fr-FR?q=Hachis%20parmentier",
+    "thermomixModels": ["TM5", "TM6", "TM7"]
+  },
+  {
+    "id": "mock-019",
+    "name": "Ratatouille",
+    "ingredients": ["courgette", "aubergine", "poivron", "tomate", "oignon", "ail", "huile d'olive", "thym", "sel"],
+    "rating": 4.6, "numberOfRatings": 505, "totalTime": 3900, "servings": 6,
+    "difficulty": "Facile", "category": "Plat", "url": "https://cookidoo.fr/search/fr-FR?q=Ratatouille",
+    "thermomixModels": ["TM5", "TM6", "TM7"]
+  },
+  {
+    "id": "mock-020",
+    "name": "Gâteau au yaourt",
+    "ingredients": ["yaourt", "œuf", "farine", "sucre", "huile"],
+    "rating": 4.6, "numberOfRatings": 2700, "totalTime": 2700, "servings": 8,
+    "difficulty": "Facile", "category": "Dessert", "url": "https://cookidoo.fr/search/fr-FR?q=G%C3%A2teau%20au%20yaourt",
+    "thermomixModels": ["TM5", "TM6", "TM7"]
+  },
+  {
+    "id": "mock-021",
+    "name": "Fondant au chocolat",
+    "ingredients": ["beurre", "sucre", "œuf", "farine"],
+    "rating": 4.8, "numberOfRatings": 2900, "totalTime": 1800, "servings": 6,
+    "difficulty": "Facile", "category": "Dessert", "url": "https://cookidoo.fr/search/fr-FR?q=Fondant%20au%20chocolat",
+    "thermomixModels": ["TM5", "TM6", "TM7"]
+  },
+  {
+    "id": "mock-022",
+    "name": "Poivrons farcis au riz et bœuf",
+    "ingredients": ["poivron", "riz", "bœuf", "oignon", "tomate", "sel", "poivre"],
+    "rating": 4.3, "numberOfRatings": 120, "totalTime": 3600, "servings": 4,
+    "difficulty": "Moyen", "category": "Plat", "url": "https://cookidoo.fr/search/fr-FR?q=Poivrons%20farcis",
+    "thermomixModels": ["TM6", "TM7"]
+  },
+  {
+    "id": "mock-023",
+    "name": "Soupe de lentilles au bacon",
+    "ingredients": ["lentilles", "lardons", "carotte", "oignon", "bouillon", "sel", "poivre"],
+    "rating": 4.5, "numberOfRatings": 300, "totalTime": 2400, "servings": 4,
+    "difficulty": "Facile", "category": "Soupe", "url": "https://cookidoo.fr/search/fr-FR?q=Soupe%20de%20lentilles",
+    "thermomixModels": ["TM5", "TM6", "TM7"]
+  },
+  {
+    "id": "mock-024",
+    "name": "Pâtes au saumon et crème",
+    "ingredients": ["pâtes", "saumon", "crème fraîche", "citron", "persil", "sel", "poivre"],
+    "rating": 4.6, "numberOfRatings": 480, "totalTime": 1500, "servings": 4,
+    "difficulty": "Facile", "category": "Plat", "url": "https://cookidoo.fr/search/fr-FR?q=P%C3%A2tes%20au%20saumon",
+    "thermomixModels": ["TM6", "TM7"]
+  },
+  {
+    "id": "mock-025",
+    "name": "Curry de poulet, champignons et lait de coco",
+    "ingredients": ["poulet", "champignon", "oignon", "curry", "gingembre", "riz", "sel"],
+    "rating": 4.7, "numberOfRatings": 360, "totalTime": 2100, "servings": 4,
+    "difficulty": "Facile", "category": "Plat", "url": "https://cookidoo.fr/search/fr-FR?q=Curry%20de%20poulet%20champignons",
+    "thermomixModels": ["TM6", "TM7"]
+  },
+  {
+    "id": "mock-026",
+    "name": "Omelette au fromage et champignons",
+    "ingredients": ["œuf", "emmental", "champignon", "beurre", "sel", "poivre"],
+    "rating": 4.4, "numberOfRatings": 210, "totalTime": 900, "servings": 2,
+    "difficulty": "Facile", "category": "Plat", "url": "https://cookidoo.fr/search/fr-FR?q=Omelette%20au%20fromage",
+    "thermomixModels": ["TM5", "TM6", "TM7"]
+  },
+  {
+    "id": "mock-027",
+    "name": "Riz cantonais",
+    "ingredients": ["riz", "œuf", "jambon", "petits pois", "carotte", "oignon", "sel"],
+    "rating": 4.5, "numberOfRatings": 650, "totalTime": 1800, "servings": 4,
+    "difficulty": "Facile", "category": "Plat", "url": "https://cookidoo.fr/search/fr-FR?q=Riz%20cantonais",
+    "thermomixModels": ["TM5", "TM6", "TM7"]
+  },
+  {
+    "id": "mock-028",
+    "name": "Moules marinières",
+    "ingredients": ["moule", "oignon", "vin blanc", "beurre", "persil", "poivre"],
+    "rating": 4.6, "numberOfRatings": 380, "totalTime": 1500, "servings": 4,
+    "difficulty": "Facile", "category": "Plat", "url": "https://cookidoo.fr/search/fr-FR?q=Moules%20mariniere",
+    "thermomixModels": ["TM6", "TM7"]
+  },
+  {
+    "id": "mock-029",
+    "name": "Purée de pommes de terre maison",
+    "ingredients": ["pomme de terre", "lait", "beurre", "sel", "poivre"],
+    "rating": 4.6, "numberOfRatings": 540, "totalTime": 1800, "servings": 4,
+    "difficulty": "Facile", "category": "Plat", "url": "https://cookidoo.fr/search/fr-FR?q=Pur%C3%A9e%20de%20pommes%20de%20terre",
+    "thermomixModels": ["TM5", "TM6", "TM7"]
+  },
+  {
+    "id": "mock-030",
+    "name": "Boulgour aux légumes d'été",
+    "ingredients": ["boulgour", "courgette", "poivron", "tomate", "oignon", "huile d'olive", "sel"],
+    "rating": 4.3, "numberOfRatings": 95, "totalTime": 1800, "servings": 4,
+    "difficulty": "Facile", "category": "Plat", "url": "https://cookidoo.fr/search/fr-FR?q=Boulgour%20aux%20l%C3%A9gumes",
+    "thermomixModels": ["TM6", "TM7"]
+  }
+]
