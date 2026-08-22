@@ -1,62 +1,96 @@
 #!/usr/bin/env node
-// Construit data/recipes-fr.json à partir de sources 100% publiques et non
-// authentifiées de cookidoo.fr — voir docs/COOKIDOO_RESEARCH.md pour le
-// détail de l'analyse technique qui justifie cette approche.
+// Construit data/recipes-fr.json (cache complet) et data/recipes-fr.compact.json
+// (ce que le navigateur télécharge réellement) à partir de sources 100%
+// publiques et non authentifiées de cookidoo.fr — voir
+// docs/COOKIDOO_RESEARCH.md pour le détail de l'analyse technique.
 //
-// Étapes :
+// Conçu pour tourner à répétition (une fois par semaine via GitHub Actions,
+// ou plusieurs fois manuellement pour peupler l'index initial) sans jamais
+// repartir de zéro :
 //  1. Récupère une clé Algolia sécurisée fraîche depuis le HTML public de
-//     cookidoo.fr/search/fr-FR (cette clé expire au bout de 7 jours, d'où
-//     l'exécution hebdomadaire de ce script par GitHub Actions).
-//  2. Interroge Algolia (recherche officielle du site, CORS ouvert, mais ici
-//     appelée côté serveur donc CORS n'entre pas en jeu) pour une liste
-//     raisonnable de mots-clés d'ingrédients courants, afin de découvrir des
-//     identifiants de recettes.
-//  3. Pour chaque recette nouvellement découverte (pas déjà en cache), va
-//     chercher sa fiche publique (sans compte) pour en extraire les vrais
-//     ingrédients, le temps, les portions et la difficulté.
-//  4. Fusionne avec l'index existant (cache par id) pour ne jamais
-//     re-télécharger une recette déjà connue, et écrit data/recipes-fr.json.
-//
-// Aucun identifiant, aucun secret, aucun proxy tiers. Uniquement des
-// requêtes HTTP vers des pages/endpoints publics de cookidoo.fr et
-// d'algolia.net, avec une temporisation entre chaque appel.
+//     cookidoo.fr/search/fr-FR (expire au bout de 7 jours, jamais codée en
+//     dur — voir getAlgoliaCredentials).
+//  2. Découvre la quasi-totalité des identifiants de recettes françaises en
+//     partitionnant l'index Algolia par facettes (catégorie, puis
+//     difficulté, puis tranche de note pour les rares cellules encore trop
+//     grosses) — voir discoverAllRecipeIds. Indépendant du dictionnaire
+//     d'ingrédients de l'app : ça couvre tout le catalogue, pas seulement
+//     ce qui matche un mot-clé connu.
+//  3. Charge l'état persistant (data/index-state.json) : recettes déjà en
+//     cache, échecs récents à ne pas retenter tout de suite.
+//  4. Récupère en priorité les recettes découvertes mais jamais encore
+//     scrapées (par popularité décroissante), puis — s'il reste du budget —
+//     rafraîchit un petit lot des fiches les plus anciennes. Ne retélécharge
+//     jamais une fiche déjà en cache et à jour.
+//  5. Les erreurs par recette (404/403/timeout/qualité) sont journalisées et
+//     n'interrompent jamais le run : seule une panne au niveau de la clé
+//     Algolia elle-même est fatale.
+//  6. Écrit un résumé de statistiques clair, le cache complet, l'état
+//     persistant, et un index compact (uniquement les champs utiles au
+//     matching et à l'affichage) destiné au navigateur.
 
 import { readFile, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
-import { ALL_INGREDIENTS, extractKnownIngredientFromPhrase } from '../js/ingredients.js';
+import { extractKnownIngredientFromPhrase } from '../js/ingredients.js';
 import { extractQuantity, stripLeadingFillers } from '../js/parser.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const OUTPUT_PATH = path.join(__dirname, '..', 'data', 'recipes-fr.json');
+const DATA_DIR = path.join(__dirname, '..', 'data');
+const CACHE_PATH = path.join(DATA_DIR, 'recipes-fr.json');
+const COMPACT_PATH = path.join(DATA_DIR, 'recipes-fr.compact.json');
+const STATE_PATH = path.join(DATA_DIR, 'index-state.json');
 
 const SEARCH_PAGE_URL = 'https://cookidoo.fr/search/fr-FR';
 const RECIPE_INDEX = 'recipes-production-fr';
-const HITS_PER_TERM = 8;
-const MAX_TOTAL_RECIPES = 500;
-// Une exécution ne va chercher les vraies fiches (ingrédients) que pour un
-// nombre borné de recettes nouvellement découvertes : le reste sera repris
-// automatiquement à la prochaine exécution hebdomadaire, via le cache déjà
-// écrit dans data/recipes-fr.json. Ça garde chaque run court et respectueux
-// du serveur de Cookidoo, quitte à ce que l'index se complète sur plusieurs
-// semaines plutôt que tout d'un coup.
-const MAX_NEW_DETAIL_FETCHES_PER_RUN = 150;
+// Filtre exact qui scope l'index multi-marché aux recettes du marché
+// français (vérifié manuellement : correspond au total affiché sur
+// cookidoo.fr/search/fr-FR).
+const FR_FILTER = 'countries:fr';
+// Limite dure d'Algolia : une requête de recherche ne peut jamais renvoyer
+// plus de 1000 résultats, quel que soit nbHits. Au-delà, il faut
+// partitionner la requête en sous-ensembles plus petits.
+const MAX_HITS_PER_QUERY = 1000;
+const RATING_BUCKETS = ['rating<4.3', 'rating>=4.3 AND rating<4.6', 'rating>=4.6'];
+
+// Cette limite protège cookidoo.fr d'un run unique trop lourd — elle ne
+// plafonne pas le catalogue dans le temps : on la remplit à nouveau à
+// chaque exécution (planifiée ou manuelle) jusqu'à couvrir tout ce qui est
+// raisonnablement récupérable.
+const MAX_NEW_DETAIL_FETCHES_PER_RUN = 1200;
+const MAX_TOTAL_RECIPES = 15000;
+// Au-delà de ce nombre de jours sans avoir été revérifiée, une fiche déjà
+// connue est candidate à un nouveau téléchargement (ingrédients modifiés,
+// recette dépubliée...), seulement si le budget du run le permet une fois
+// les nouvelles découvertes traitées en priorité.
+const STALE_REFRESH_DAYS = 120;
+// Une recette qui échoue (404, non traduite, etc.) n'est pas retentée avant
+// ce délai : ça évite de re-frapper indéfiniment des fiches qui ont de
+// bonnes chances d'échouer à nouveau pour la même raison.
+const FAILURE_COOLDOWN_DAYS = 21;
+const REQUEST_TIMEOUT_MS = 15000;
 const DETAIL_REQUEST_DELAY_MS = 500;
 const DISCOVERY_REQUEST_DELAY_MS = 150;
 const USER_AGENT =
-  'FrigoMixBot/1.0 (projet hobby non commercial ; rafraîchit un index public de découverte de recettes une fois par semaine ; contact via le dépôt GitHub du projet)';
-
-// On réutilise directement le dictionnaire d'ingrédients de l'app comme
-// mots-clés de découverte : c'est exactement ce que les utilisateurs de
-// FrigoMix vont saisir, donc la couverture de l'index colle à l'usage réel.
-const SEARCH_TERMS = ALL_INGREDIENTS;
+  'FrigoMixBot/1.0 (projet hobby non commercial ; rafraîchit un index public de découverte de recettes ; contact via le dépôt GitHub du projet)';
 
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
+function categorizeError(err) {
+  const msg = String(err?.message || err);
+  if (/^404/.test(msg)) return '404';
+  if (/^403/.test(msg)) return '403';
+  if (/timeout|abort/i.test(msg)) return 'timeout';
+  return 'autre';
+}
+
 async function fetchText(url) {
-  const res = await fetch(url, { headers: { 'user-agent': USER_AGENT, 'accept-language': 'fr-FR' } });
+  const res = await fetch(url, {
+    headers: { 'user-agent': USER_AGENT, 'accept-language': 'fr-FR' },
+    signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS),
+  });
   if (!res.ok) throw new Error(`${res.status} ${res.statusText} sur ${url}`);
   return res.text();
 }
@@ -78,23 +112,123 @@ async function getAlgoliaCredentials() {
   return { apiKey: data.apiKey, appId, validUntil: data.validUntil };
 }
 
-async function algoliaSearch({ appId, apiKey }, query, hitsPerPage) {
+function buildParams(obj) {
+  return Object.entries(obj)
+    .filter(([, v]) => v !== undefined)
+    .map(([k, v]) => `${k}=${encodeURIComponent(typeof v === 'string' || typeof v === 'number' ? v : JSON.stringify(v))}`)
+    .join('&');
+}
+
+async function algoliaQuery({ appId, apiKey }, params) {
   const url = `https://${appId.toLowerCase()}-dsn.algolia.net/1/indexes/*/queries?x-algolia-agent=${encodeURIComponent(
     'FrigoMix-update-script'
   )}&x-algolia-api-key=${apiKey}&x-algolia-application-id=${appId}`;
   const res = await fetch(url, {
     method: 'POST',
     headers: { 'content-type': 'application/x-www-form-urlencoded' },
-    body: JSON.stringify({ requests: [{ indexName: RECIPE_INDEX, params: `query=${encodeURIComponent(query)}&hitsPerPage=${hitsPerPage}` }] }),
+    body: JSON.stringify({ requests: [{ indexName: RECIPE_INDEX, params }] }),
+    signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS),
   });
-  if (!res.ok) throw new Error(`Algolia ${res.status} pour "${query}"`);
+  if (!res.ok) throw new Error(`Algolia ${res.status} pour "${params}"`);
   const json = await res.json();
-  return json.results?.[0]?.hits ?? [];
+  return json.results?.[0];
 }
 
 function resolveImage(templated) {
   if (!templated) return null;
   return templated.replace('{assethost}', 'assets.tmecosys.com').replace('{transformation}', 't_web_shared_recipe_221x240');
+}
+
+async function countHits(credentials, filters) {
+  const result = await algoliaQuery(credentials, buildParams({ query: '', hitsPerPage: 0, filters }));
+  return result?.nbHits ?? 0;
+}
+
+async function discoverFacetValues(credentials, facetName, filters) {
+  const result = await algoliaQuery(credentials, buildParams({ query: '', hitsPerPage: 0, filters, facets: [facetName] }));
+  return Object.keys(result?.facets?.[facetName] || {});
+}
+
+async function collectHits(credentials, filters, discovered) {
+  const result = await algoliaQuery(credentials, buildParams({ query: '', hitsPerPage: MAX_HITS_PER_QUERY, filters }));
+  for (const hit of result?.hits || []) {
+    if (!hit.id) continue;
+    discovered.set(hit.id, {
+      title: hit.title,
+      rating: hit.rating ?? null,
+      numberOfRatings: hit.numberOfRatings ?? null,
+      totalTime: hit.totalTime ?? null,
+      image: resolveImage(hit.image),
+    });
+  }
+}
+
+/**
+ * Découpe récursivement une partition de l'index tant qu'elle dépasse la
+ * limite Algolia de 1000 résultats par requête : catégorie d'abord (~20
+ * valeurs, la dimension avec le meilleur pouvoir de découpage), puis
+ * difficulté, puis tranche de note pour les rares cellules encore trop
+ * grosses. Une erreur réseau sur une branche ne fait perdre que cette
+ * branche (journalisée), jamais tout le run.
+ */
+async function discoverPartition(credentials, filters, discovered, fallbackLevel = 0) {
+  let nbHits;
+  try {
+    nbHits = await countHits(credentials, filters);
+  } catch (err) {
+    console.warn(`  ⚠ comptage échoué pour "${filters}" (${err.message}), branche ignorée.`);
+    return;
+  }
+  await sleep(DISCOVERY_REQUEST_DELAY_MS);
+  if (nbHits === 0) return;
+
+  try {
+    if (nbHits <= MAX_HITS_PER_QUERY) {
+      await collectHits(credentials, filters, discovered);
+      await sleep(DISCOVERY_REQUEST_DELAY_MS);
+      return;
+    }
+
+    if (fallbackLevel === 0) {
+      const categories = await discoverFacetValues(credentials, 'categories.id', filters);
+      await sleep(DISCOVERY_REQUEST_DELAY_MS);
+      for (const category of categories) {
+        await discoverPartition(credentials, `${filters} AND categories.id:"${category}"`, discovered, 1);
+      }
+      return;
+    }
+
+    if (fallbackLevel === 1) {
+      const difficulties = await discoverFacetValues(credentials, 'difficulty', filters);
+      await sleep(DISCOVERY_REQUEST_DELAY_MS);
+      for (const value of difficulties) {
+        await discoverPartition(credentials, `${filters} AND difficulty:"${value}"`, discovered, 2);
+      }
+      return;
+    }
+
+    if (fallbackLevel === 2) {
+      for (const bucket of RATING_BUCKETS) {
+        await discoverPartition(credentials, `${filters} AND ${bucket}`, discovered, 3);
+      }
+      return;
+    }
+
+    console.warn(`  ⚠ partition encore trop large (${nbHits} résultats) après tous les axes de découpe, capture partielle : ${filters}`);
+    await collectHits(credentials, filters, discovered);
+  } catch (err) {
+    console.warn(`  ⚠ découverte échouée pour "${filters}" (${err.message}), branche ignorée.`);
+  }
+}
+
+async function discoverAllRecipeIds(credentials) {
+  const discovered = new Map();
+  await discoverPartition(credentials, FR_FILTER, discovered);
+  // Note : au-delà d'un certain volume, nbHits devient une estimation
+  // d'Algolia plutôt qu'un compte exact, donc on n'affiche pas de
+  // pourcentage de couverture qui donnerait une fausse précision.
+  console.log(`${discovered.size} recettes distinctes découvertes.`);
+  return discovered;
 }
 
 // La fiche recette publique embarque un bloc JSON-LD standard schema.org/Recipe
@@ -187,48 +321,66 @@ async function fetchRecipeDetail(id) {
   return { ...parseRecipePage(html), url };
 }
 
+async function readJsonSafe(filePath, fallback) {
+  try {
+    const parsed = JSON.parse(await readFile(filePath, 'utf8'));
+    return parsed ?? fallback;
+  } catch {
+    return fallback;
+  }
+}
+
+function isInCooldown(failureEntry) {
+  if (!failureEntry) return false;
+  const elapsedDays = (Date.now() - new Date(failureEntry.lastAttempt).getTime()) / (24 * 3600 * 1000);
+  return elapsedDays < FAILURE_COOLDOWN_DAYS;
+}
+
+/** Ne garde que les champs utiles au matching et à l'affichage côté navigateur. */
+function toCompactRecipe(recipe) {
+  return {
+    id: recipe.id,
+    name: recipe.name,
+    ingredients: recipe.ingredients,
+    totalTime: recipe.totalTime,
+    servings: recipe.servings,
+    difficulty: recipe.difficulty,
+    category: recipe.category,
+    rating: recipe.rating,
+    image: recipe.image,
+    url: recipe.url,
+  };
+}
+
 async function main() {
   console.log('Récupération d’une clé Algolia fraîche depuis cookidoo.fr...');
   const credentials = await getAlgoliaCredentials();
   console.log(`Clé obtenue, valide jusqu’au ${new Date(credentials.validUntil * 1000).toISOString()}.`);
 
-  const discovered = new Map(); // id -> {title, rating, numberOfRatings, totalTime, image}
-  console.log(`Découverte de recettes sur ${SEARCH_TERMS.length} mots-clés...`);
-  for (const term of SEARCH_TERMS) {
-    try {
-      const hits = await algoliaSearch(credentials, term, HITS_PER_TERM);
-      for (const hit of hits) {
-        if (!hit.id) continue;
-        discovered.set(hit.id, {
-          title: hit.title,
-          rating: hit.rating ?? null,
-          numberOfRatings: hit.numberOfRatings ?? null,
-          totalTime: hit.totalTime ?? null,
-          image: resolveImage(hit.image),
-        });
-      }
-    } catch (err) {
-      console.warn(`  ⚠ recherche "${term}" ignorée : ${err.message}`);
-    }
-    await sleep(DISCOVERY_REQUEST_DELAY_MS);
-  }
-  console.log(`${discovered.size} recettes distinctes découvertes via Algolia.`);
+  console.log('Découverte des recettes par partitionnement de facettes (catégorie / difficulté / note)...');
+  const discovered = await discoverAllRecipeIds(credentials);
 
-  let existing = [];
-  try {
-    existing = JSON.parse(await readFile(OUTPUT_PATH, 'utf8'));
-    if (!Array.isArray(existing)) existing = [];
-  } catch {
-    existing = [];
-  }
-  const cache = new Map(existing.filter((r) => r.ingredients?.length).map((r) => [r.id, r]));
-  console.log(`${cache.size} recettes déjà en cache avec ingrédients (pas re-téléchargées).`);
+  const existingCache = await readJsonSafe(CACHE_PATH, []);
+  const cache = new Map((Array.isArray(existingCache) ? existingCache : []).filter((r) => r.ingredients?.length).map((r) => [r.id, r]));
+  console.log(`${cache.size} recettes déjà en cache avec ingrédients.`);
 
-  const final = new Map();
+  const state = await readJsonSafe(STATE_PATH, { failedIds: {} });
+  const failedIds = state.failedIds || {};
+
+  // On part de TOUT le cache existant (pas seulement ce qui a été
+  // redécouvert cette exécution) : une recette déjà connue et valide ne
+  // doit jamais disparaître de l'index simplement parce que le passage de
+  // découverte de cette exécution ne l'a pas re-croisée (Algolia peut faire
+  // varier légèrement ses résultats d'une requête à l'autre).
+  const final = new Map(cache);
+
+  const stats = { discovered: discovered.size, alreadyCached: 0, newlyFetched: 0, refreshed: 0, removed404: 0, skippedCooldown: 0, errors: { '404': 0, '403': 0, timeout: 0, autre: 0, qualite: 0 } };
+
   const needsFetch = [];
   for (const [id, meta] of discovered) {
     const cached = cache.get(id);
     if (cached) {
+      stats.alreadyCached += 1;
       // On rafraîchit note/temps/image depuis Algolia (pas de coût réseau
       // supplémentaire) mais on garde les ingrédients déjà scrapés.
       final.set(id, {
@@ -236,28 +388,51 @@ async function main() {
         rating: meta.rating ?? cached.rating,
         numberOfRatings: meta.numberOfRatings ?? cached.numberOfRatings,
       });
-    } else {
-      needsFetch.push([id, meta]);
+      continue;
     }
+    if (isInCooldown(failedIds[id])) {
+      stats.skippedCooldown += 1;
+      continue;
+    }
+    needsFetch.push([id, meta]);
   }
 
   // On priorise les recettes les plus notées : ce sont celles qui ont le
   // plus de chances d'être vraiment utiles aux utilisateurs de FrigoMix.
   needsFetch.sort((a, b) => (b[1].numberOfRatings || 0) - (a[1].numberOfRatings || 0));
-  const toFetch = needsFetch.slice(0, MAX_NEW_DETAIL_FETCHES_PER_RUN);
-  if (needsFetch.length > toFetch.length) {
-    console.log(
-      `${needsFetch.length - toFetch.length} nouvelles recettes découvertes reportées à une prochaine exécution (limite de ${MAX_NEW_DETAIL_FETCHES_PER_RUN} nouvelles fiches par run).`
-    );
+  let toFetch = needsFetch.slice(0, MAX_NEW_DETAIL_FETCHES_PER_RUN).map(([id, meta]) => [id, meta, 'new']);
+  const remainingAfterNew = needsFetch.length - toFetch.length;
+  if (remainingAfterNew > 0) {
+    console.log(`${remainingAfterNew} nouvelles recettes découvertes reportées à une prochaine exécution (budget de ${MAX_NEW_DETAIL_FETCHES_PER_RUN} fiches par run atteint).`);
   }
 
-  let fetchedCount = 0;
-  for (const [id, meta] of toFetch) {
+  // S'il reste du budget après les nouvelles découvertes, on rafraîchit en
+  // priorité les fiches les plus anciennes (Cookidoo peut modifier une
+  // recette après son premier scrape).
+  const remainingBudget = MAX_NEW_DETAIL_FETCHES_PER_RUN - toFetch.length;
+  if (remainingBudget > 0) {
+    const staleCutoffMs = Date.now() - STALE_REFRESH_DAYS * 24 * 3600 * 1000;
+    const alreadyQueued = new Set(toFetch.map(([id]) => id));
+    const staleCandidates = [...cache.values()]
+      .filter((r) => !alreadyQueued.has(r.id) && (!r.updatedAt || new Date(r.updatedAt).getTime() < staleCutoffMs))
+      .sort((a, b) => new Date(a.updatedAt || 0) - new Date(b.updatedAt || 0))
+      .slice(0, remainingBudget);
+    for (const r of staleCandidates) {
+      toFetch.push([r.id, { title: r.name, numberOfRatings: r.numberOfRatings, rating: r.rating, totalTime: r.totalTime, image: r.image }, 'stale']);
+    }
+    if (staleCandidates.length) {
+      console.log(`${staleCandidates.length} fiches de plus de ${STALE_REFRESH_DAYS}j ajoutées au rafraîchissement.`);
+    }
+  }
+
+  for (const [id, meta, reason] of toFetch) {
     try {
       const detail = await fetchRecipeDetail(id);
       if (detail.ingredients.length < 2) {
+        stats.errors.qualite += 1;
         console.warn(`  ⚠ ${id} (${meta.title}) : extraction d’ingrédients trop pauvre, ignorée.`);
       } else if (detail.ingredients.length >= 4 && detail.recognitionRate < 0.3) {
+        stats.errors.qualite += 1;
         console.warn(`  ⚠ ${id} (${meta.title}) : fiche probablement non traduite en français, ignorée.`);
       } else {
         final.set(id, {
@@ -272,15 +447,28 @@ async function main() {
           category: detail.category,
           image: detail.image || meta.image,
           url: detail.url,
+          updatedAt: new Date().toISOString(),
         });
-        fetchedCount += 1;
+        if (reason === 'new') stats.newlyFetched += 1;
+        else stats.refreshed += 1;
+        delete failedIds[id];
       }
     } catch (err) {
-      console.warn(`  ⚠ fiche ${id} ignorée : ${err.message}`);
+      const kind = categorizeError(err);
+      stats.errors[kind] = (stats.errors[kind] || 0) + 1;
+      failedIds[id] = { reason: kind, message: String(err.message || err), lastAttempt: new Date().toISOString(), attempts: (failedIds[id]?.attempts || 0) + 1 };
+      if (kind === '404' && reason === 'stale') {
+        // La recette a disparu de Cookidoo : on ne la garde pas, un lien
+        // mort ne rendrait pas service à l'utilisateur.
+        final.delete(id);
+        stats.removed404 += 1;
+        console.warn(`  ⚠ ${id} : 404, retirée de l'index (recette probablement dépubliée).`);
+      } else {
+        console.warn(`  ⚠ fiche ${id} ignorée (${kind}) : ${err.message}`);
+      }
     }
     await sleep(DETAIL_REQUEST_DELAY_MS);
   }
-  console.log(`${fetchedCount} nouvelles fiches recette téléchargées et analysées.`);
 
   let recipes = [...final.values()];
   if (recipes.length > MAX_TOTAL_RECIPES) {
@@ -290,8 +478,30 @@ async function main() {
   }
   recipes.sort((a, b) => a.id.localeCompare(b.id));
 
-  await writeFile(OUTPUT_PATH, JSON.stringify(recipes, null, 2) + '\n', 'utf8');
-  console.log(`data/recipes-fr.json écrit avec ${recipes.length} recettes.`);
+  await writeFile(CACHE_PATH, JSON.stringify(recipes, null, 2) + '\n', 'utf8');
+
+  const compact = recipes.map(toCompactRecipe);
+  await writeFile(COMPACT_PATH, JSON.stringify(compact) + '\n', 'utf8');
+
+  const nextState = {
+    lastRun: new Date().toISOString(),
+    failedIds,
+    lastStats: { ...stats, totalFinal: recipes.length },
+  };
+  await writeFile(STATE_PATH, JSON.stringify(nextState, null, 2) + '\n', 'utf8');
+
+  const errorTotal = Object.values(stats.errors).reduce((a, b) => a + b, 0);
+  console.log('');
+  console.log('=== Résumé ===');
+  console.log(`Recettes découvertes cette exécution : ${stats.discovered}`);
+  console.log(`Déjà en cache (non retéléchargées)   : ${stats.alreadyCached}`);
+  console.log(`Ignorées (échec récent, cooldown)     : ${stats.skippedCooldown}`);
+  console.log(`Nouvelles fiches téléchargées          : ${stats.newlyFetched}`);
+  console.log(`Fiches anciennes rafraîchies            : ${stats.refreshed}`);
+  console.log(`Retirées (404, dépubliées)             : ${stats.removed404}`);
+  console.log(`Erreurs — 404:${stats.errors['404']} 403:${stats.errors['403']} timeout:${stats.errors.timeout} qualité:${stats.errors.qualite} autre:${stats.errors.autre} (total ${errorTotal})`);
+  console.log(`Total final indexé                      : ${recipes.length}`);
+  console.log(`Index compact écrit (${compact.length} recettes) : ${COMPACT_PATH}`);
 }
 
 main().catch((err) => {

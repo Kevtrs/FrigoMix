@@ -32,8 +32,8 @@ Ingrédients du frigo
   "Voir sur Cookidoo" → ouvre la vraie fiche recette dans un nouvel onglet
 ```
 
-Les recettes viennent d'un index statique (`data/recipes-fr.json`), reconstruit une
-fois par semaine par une GitHub Action à partir de sources publiques et non
+Les recettes viennent d'un index statique compact (`data/recipes-fr.compact.json`),
+reconstruit régulièrement par une GitHub Action à partir de sources publiques et non
 authentifiées de cookidoo.fr (voir [`docs/COOKIDOO_RESEARCH.md`](docs/COOKIDOO_RESEARCH.md)
 pour le détail complet de l'analyse technique). Le matching (score, ingrédients
 manquants, anti-gaspillage...) tourne entièrement dans le navigateur.
@@ -93,11 +93,13 @@ js/
   providers/
     index.js                 fabrique de provider (mock | local-index)
     mock-provider.js          data/mock-recipes.json (dev/tests)
-    local-index-provider.js   data/recipes-fr.json (production)
+    local-index-provider.js   data/recipes-fr.compact.json (production)
     cookidoo-search-link-provider.js  dernier recours : lien de recherche Cookidoo
 data/
   mock-recipes.json        30 recettes de démonstration
-  recipes-fr.json           index réel, régénéré chaque semaine
+  recipes-fr.json           cache complet du scraper (jamais téléchargé par le navigateur)
+  recipes-fr.compact.json   version allégée servie à l'app (id/nom/ingrédients/temps/...)
+  index-state.json          état persistant du scraper (échecs récents, stats du dernier run)
 scripts/update-recipes.mjs  scraper respectueux (voir plus bas)
 docs/COOKIDOO_RESEARCH.md   spike technique complet
 tests/                      normalisation, parsing, matching (node --test)
@@ -108,23 +110,35 @@ toute l'app d'une source de données à l'autre sans toucher au reste du code.
 
 ## Comment l'index de recettes est construit
 
-`scripts/update-recipes.mjs` (lancé une fois par semaine par GitHub Actions) :
+`scripts/update-recipes.mjs` (lancé une fois par semaine par GitHub Actions, ou à la
+main autant de fois que nécessaire) :
 
 1. Récupère une clé de recherche Algolia fraîche depuis le HTML public de
    `cookidoo.fr/search/fr-FR` (cette clé, générée par Cookidoo lui-même pour sa propre
-   page de recherche, expire au bout de 7 jours — d'où la fréquence hebdomadaire).
-2. Interroge Algolia avec les mots du dictionnaire d'ingrédients de FrigoMix, pour
-   découvrir des identifiants de recettes pertinents.
-3. Pour chaque recette nouvellement découverte (les recettes déjà connues ne sont pas
-   re-téléchargées), va chercher sa fiche publique — accessible sans compte — et en
-   extrait les vrais ingrédients, le temps, les portions et la difficulté à partir du
-   bloc de données structurées `schema.org/Recipe` que Cookidoo publie lui-même dans
-   le HTML de chaque fiche (destiné aux moteurs de recherche).
-4. Limite le nombre de nouvelles fiches par exécution, avec un cache basé sur l'id pour
-   ne jamais re-télécharger une recette déjà indexée : l'index se complète
-   progressivement sur plusieurs semaines plutôt que de solliciter le site d'un coup.
+   page de recherche, expire au bout de 7 jours — jamais codée en dur).
+2. Découvre la quasi-totalité des recettes françaises en partitionnant l'index Algolia
+   par facettes (catégorie, puis difficulté, puis tranche de note pour les rares
+   cellules encore trop grosses — Algolia plafonne chaque requête à 1000 résultats).
+   Indépendant du dictionnaire d'ingrédients de l'app : ça couvre tout le catalogue,
+   pas seulement les recettes correspondant à un mot-clé connu.
+3. Pour chaque recette découverte mais jamais encore scrapée (en priorité les plus
+   notées), va chercher sa fiche publique — accessible sans compte — et en extrait les
+   vrais ingrédients, le temps, les portions et la difficulté à partir du bloc de
+   données structurées `schema.org/Recipe` que Cookidoo publie lui-même dans le HTML de
+   chaque fiche (destiné aux moteurs de recherche).
+4. Limite le nombre de nouvelles fiches par exécution (`data/index-state.json` retient
+   les échecs récents pour ne pas les retenter tout de suite, et la date de dernière
+   mise à jour de chaque recette pour rafraîchir occasionnellement les plus anciennes) :
+   l'index se complète progressivement sur plusieurs exécutions plutôt que de
+   solliciter le site d'un coup. Une recette déjà en cache n'est jamais perdue même si
+   un passage de découverte ne la re-croise pas.
+5. Écrit `data/recipes-fr.json` (cache complet, usage scraper uniquement) et en dérive
+   `data/recipes-fr.compact.json` (uniquement les champs utiles au matching et à
+   l'affichage) — c'est ce second fichier, plus léger, que le navigateur télécharge.
 
-Aucun identifiant, mot de passe ou token Cookidoo n'est utilisé à aucune étape.
+Une erreur sur une recette (404, timeout, page non traduite...) est journalisée et
+n'interrompt jamais le run ; seule une panne au niveau de la clé Algolia elle-même est
+fatale. Aucun identifiant, mot de passe ou token Cookidoo n'est utilisé à aucune étape.
 
 ## Limites connues
 

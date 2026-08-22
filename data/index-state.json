@@ -1,0 +1,20 @@
+{
+  "lastRun": "2026-08-22T20:58:44.439Z",
+  "failedIds": {},
+  "lastStats": {
+    "discovered": 11479,
+    "alreadyCached": 1664,
+    "newlyFetched": 1163,
+    "refreshed": 0,
+    "removed404": 0,
+    "skippedCooldown": 0,
+    "errors": {
+      "403": 0,
+      "404": 0,
+      "timeout": 0,
+      "autre": 0,
+      "qualite": 37
+    },
+    "totalFinal": 2827
+  }
+}
