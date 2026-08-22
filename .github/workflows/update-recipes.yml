@@ -10,6 +10,11 @@ on:
 
 permissions:
   contents: write
+  # Nécessaire pour déclencher le workflow de déploiement ci-dessous : un
+  # push effectué avec le GITHUB_TOKEN par défaut ne redéclenche jamais
+  # automatiquement les autres workflows (protection anti-boucle de GitHub),
+  # donc sans ça le site resterait figé après chaque mise à jour de l'index.
+  actions: write
 
 concurrency:
   group: update-recipes
@@ -29,9 +34,11 @@ jobs:
         run: node scripts/update-recipes.mjs
 
       - name: Committer si l'index a changé
+        id: commit
         run: |
           if git diff --quiet -- data/recipes-fr.json; then
             echo "Aucun changement dans l'index de recettes."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
           git config user.name "github-actions[bot]"
@@ -39,3 +46,10 @@ jobs:
           git add data/recipes-fr.json
           git commit -m "chore: mise à jour hebdomadaire de l'index de recettes"
           git push
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+
+      - name: Déclencher le déploiement GitHub Pages
+        if: steps.commit.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run deploy.yml --ref main
