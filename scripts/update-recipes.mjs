@@ -430,9 +430,21 @@ async function main() {
       const detail = await fetchRecipeDetail(id);
       if (detail.ingredients.length < 2) {
         stats.errors.qualite += 1;
+        failedIds[id] = {
+          reason: 'qualite',
+          message: 'Extraction d’ingrédients trop pauvre',
+          lastAttempt: new Date().toISOString(),
+          attempts: (failedIds[id]?.attempts || 0) + 1,
+        };
         console.warn(`  ⚠ ${id} (${meta.title}) : extraction d’ingrédients trop pauvre, ignorée.`);
       } else if (detail.ingredients.length >= 4 && detail.recognitionRate < 0.3) {
         stats.errors.qualite += 1;
+        failedIds[id] = {
+          reason: 'qualite',
+          message: 'Fiche probablement non traduite en français',
+          lastAttempt: new Date().toISOString(),
+          attempts: (failedIds[id]?.attempts || 0) + 1,
+        };
         console.warn(`  ⚠ ${id} (${meta.title}) : fiche probablement non traduite en français, ignorée.`);
       } else {
         final.set(id, {

@@ -129,6 +129,7 @@ export const INGREDIENT_ALIASES = {
 // - secondary : valeur par défaut pour tout ce qui n'est pas classé ailleurs.
 // - main : ingrédients qui définissent l'identité du plat.
 const MAIN_INGREDIENTS = new Set([
+  'œuf',
   'poulet', 'bœuf', 'steak haché', 'porc', 'jambon', 'dinde', 'agneau', 'veau',
   'saumon', 'cabillaud', 'thon', 'crevette', 'moule', 'colin',
   'riz', 'pâtes', 'semoule', 'quinoa', 'lentilles', 'pois chiche', 'boulgour',
@@ -137,8 +138,10 @@ const MAIN_INGREDIENTS = new Set([
 ]);
 
 const BASIC_INGREDIENTS = new Set([
-  'sel', 'poivre', 'huile', "huile d'olive", 'eau', 'sucre', 'farine',
-  'vinaigre', 'ail', 'oignon', 'beurre',
+  // Seuls les ingrédients véritablement universels sont gratuits dans le
+  // score. Farine, sucre, beurre, huile, ail ou oignon ne sont disponibles
+  // que si l'utilisateur les a saisis ou activés dans ses produits de base.
+  'sel', 'poivre', 'eau',
 ]);
 
 export function ingredientTier(canonicalName) {

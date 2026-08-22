@@ -58,7 +58,9 @@ export function calculateRecipeMatch(recipe, pantry, options = {}) {
 
   for (const ing of ingredients) {
     const tier = ingredientTier(ing);
-    const available = has(pantry.have, ing) || (tier === 'basic' && has(pantry.enabledStaples, ing));
+    // Un produit activé dans « généralement chez moi » est disponible quel
+    // que soit son tier. Le tier sert à pondérer, pas à ignorer le placard.
+    const available = has(pantry.have, ing) || has(pantry.enabledStaples, ing);
 
     if (available) {
       matched.push(ing);
@@ -100,9 +102,18 @@ export function calculateRecipeMatch(recipe, pantry, options = {}) {
     ? priorityMatches.length / pantry.priority.size
     : 0;
 
-  const RATIO_WEIGHT = 0.55;
-  const COVERAGE_WEIGHT = 0.35;
+  // Une recette dont le titre cite l'ingrédient recherché répond mieux à
+  // l'intention qu'une préparation où il n'est qu'un ingrédient technique.
+  // `includes` couvre aussi naturellement le pluriel « œufs ».
+  const normalizedTitle = (recipe.name || '').toLocaleLowerCase('fr');
+  const titleMatchFraction = userSignificantIngredients.length
+    ? userSignificantIngredients.filter((i) => normalizedTitle.includes(i)).length / userSignificantIngredients.length
+    : 0;
+
+  const RATIO_WEIGHT = 0.48;
+  const COVERAGE_WEIGHT = 0.3;
   const PRIORITY_WEIGHT = 0.1;
+  const TITLE_WEIGHT = 0.12;
 
   // Légère pénalité pour les recettes qui demanderaient beaucoup d'achats,
   // même si le ratio pondéré reste correct — mais on ne pénalise qu'à
@@ -111,7 +122,12 @@ export function calculateRecipeMatch(recipe, pantry, options = {}) {
   // secondaire ne doit presque rien coûter).
   const missingPenalty = Math.max(0.5, 1 - 0.03 * Math.max(0, missing.length - 1));
 
-  let score = (baseRatio * RATIO_WEIGHT + coverageFraction * COVERAGE_WEIGHT + priorityFraction * PRIORITY_WEIGHT) * missingPenalty;
+  let score = (
+    baseRatio * RATIO_WEIGHT
+    + coverageFraction * COVERAGE_WEIGHT
+    + priorityFraction * PRIORITY_WEIGHT
+    + titleMatchFraction * TITLE_WEIGHT
+  ) * missingPenalty;
   score = Math.max(0, Math.min(1, Math.round(score * 1000) / 1000));
 
   return {
@@ -120,6 +136,7 @@ export function calculateRecipeMatch(recipe, pantry, options = {}) {
     missingIngredients: missing,
     ignoredMissingIngredients: ignoredMissing,
     priorityMatches,
+    titleMatchFraction,
     excluded: false,
     missingMainCount,
   };

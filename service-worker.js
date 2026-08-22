@@ -1,7 +1,7 @@
 // Service worker minimal : app shell en cache pour un fonctionnement
 // hors-ligne complet, données recettes en stale-while-revalidate pour
 // profiter des mises à jour hebdomadaires sans bloquer l'affichage.
-const CACHE_VERSION = 'frigomix-v3';
+const CACHE_VERSION = 'frigomix-v4';
 const APP_SHELL = [
   './',
   './index.html',
@@ -12,6 +12,7 @@ const APP_SHELL = [
   './js/ingredients.js',
   './js/parser.js',
   './js/matching.js',
+  './js/filters.js',
   './js/storage.js',
   './js/providers/index.js',
   './js/providers/mock-provider.js',

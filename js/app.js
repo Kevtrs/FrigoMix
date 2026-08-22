@@ -2,6 +2,7 @@ import { CONFIG } from './config.js';
 import { suggestIngredients, normalizeIngredient, QUICK_SUGGESTIONS } from './ingredients.js';
 import { parseIngredientInput } from './parser.js';
 import { findMatchingRecipes } from './matching.js';
+import { applyRecipeFilters, hasRequiredSearchCriteria } from './filters.js';
 import * as storage from './storage.js';
 import { loadRecipesWithFallback, buildCookidooSearchUrl } from './providers/index.js';
 
@@ -46,6 +47,8 @@ const staplesSummaryEl = $('staples-summary');
 const forbiddenSummaryEl = $('forbidden-summary');
 const filtersSummaryEl = $('filters-summary');
 const filtersContent = $('filters-content');
+const filtersPanel = $('filters-panel');
+const filtersToggle = $('filters-toggle');
 
 // --- Utilitaires UI ---
 
@@ -289,6 +292,7 @@ function updateStaplesSummary() {
 function getFilters() {
   return {
     servings: $('filter-servings').value || null,
+    mealKind: $('filter-meal-kind').value || null,
     maxTime: $('filter-time').value ? Number($('filter-time').value) : null,
     difficulty: $('filter-difficulty').value || null,
     category: $('filter-category').value || null,
@@ -296,36 +300,37 @@ function getFilters() {
   };
 }
 
-function applyFilters(recipes, filters) {
-  return recipes.filter((r) => {
-    if (filters.maxTime && r.totalTime && r.totalTime > filters.maxTime) return false;
-    if (filters.difficulty && r.difficulty && r.difficulty !== filters.difficulty) return false;
-    if (filters.category && r.category && r.category !== filters.category) return false;
-    if (filters.thermomixModel && r.thermomixModels && !r.thermomixModels.includes(filters.thermomixModel)) return false;
-    return true;
-  });
-}
-
 const TIME_LABELS = { '1200': '20 min', '1800': '30 min', '2700': '45 min', '3600': '1 h' };
 function updateFiltersSummary() {
   const f = getFilters();
   const parts = [];
+  if (!f.category) parts.push('Type requis');
   if (f.maxTime) parts.push(`Moins de ${TIME_LABELS[String(f.maxTime)] || f.maxTime + 's'}`);
+  if (f.mealKind) parts.push(f.mealKind === 'savory' ? 'Salé' : 'Sucré');
   if (f.difficulty) parts.push(f.difficulty);
   if (f.category) parts.push(f.category);
   if (f.servings) parts.push(`${f.servings} pers.`);
+  if (f.thermomixModel) parts.push(f.thermomixModel);
   filtersSummaryEl.textContent = parts.length ? parts.join(' · ') : 'Peu importe';
 }
-filtersContent.addEventListener('change', updateFiltersSummary);
+filtersContent.addEventListener('change', () => {
+  updateFiltersSummary();
+  updateSearchButtonState();
+});
 
 // --- Recherche ---
 
 function updateSearchButtonState() {
-  searchBtn.disabled = pantry.length === 0;
+  const filters = getFilters();
+  const categoryMissing = !filters.category;
+  searchBtn.disabled = !hasRequiredSearchCriteria(pantry.length, filters);
+  filtersPanel.classList.toggle('is-required', pantry.length > 0 && categoryMissing);
   if (pantry.length === 0) {
     searchBtn.textContent = 'Ajoute des ingrédients';
+  } else if (categoryMissing) {
+    searchBtn.textContent = 'Choisis un type de recette';
   } else {
-    searchBtn.textContent = `Voir les recettes avec ${pantry.length === 1 ? 'mon ingrédient' : `mes ${pantry.length} ingrédients`}`;
+    searchBtn.textContent = `Voir les ${filters.category.toLocaleLowerCase('fr')}s avec ${pantry.length === 1 ? 'mon ingrédient' : `mes ${pantry.length} ingrédients`}`;
   }
 }
 
@@ -339,6 +344,14 @@ function buildPantrySets() {
 }
 
 async function runSearch() {
+  const filters = getFilters();
+  if (!hasRequiredSearchCriteria(pantry.length, filters)) {
+    filtersToggle.setAttribute('aria-expanded', 'true');
+    filtersContent.hidden = false;
+    $('filter-category').focus();
+    updateSearchButtonState();
+    return;
+  }
   hasSearchedOnce = true;
   visibleCount = CONFIG.RESULTS_PAGE_SIZE;
   emptyState.hidden = true;
@@ -351,8 +364,7 @@ async function runSearch() {
 
   await new Promise((resolve) => setTimeout(resolve, 150)); // laisse le skeleton s'afficher
 
-  const filters = getFilters();
-  const pool = applyFilters(allRecipes, filters);
+  const pool = applyRecipeFilters(allRecipes, filters);
   const pantrySets = buildPantrySets();
   const { results } = findMatchingRecipes(pool, pantrySets);
 

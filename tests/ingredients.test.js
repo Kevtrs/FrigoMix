@@ -24,7 +24,9 @@ test('conserve un ingrédient inconnu du dictionnaire tel quel (nettoyé)', () =
 
 test('classe les ingrédients par tier pour la pondération du matching', () => {
   assert.equal(ingredientTier('poulet'), 'main');
+  assert.equal(ingredientTier('œuf'), 'main');
   assert.equal(ingredientTier('parmesan'), 'secondary');
+  assert.equal(ingredientTier('farine'), 'secondary');
   assert.equal(ingredientTier('sel'), 'basic');
 });
 

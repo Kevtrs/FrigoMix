@@ -95,3 +95,27 @@ test('les ingrédients de base manquants (sel, poivre...) ne pénalisent presque
   assert.ok(match.score >= 0.9, `score attendu proche de 1, obtenu ${match.score}`);
   assert.deepEqual(match.ignoredMissingIngredients.sort(), ['poivre', 'sel']);
 });
+
+test('un œuf seul ne rend pas gratuitement réalisable un gâteau', () => {
+  const pantry = pantryOf({ have: ['œuf'], staples: ['sel', 'poivre', 'eau', 'huile'] });
+  const eggDish = {
+    id: 'eggs', name: 'Œufs sur le plat', url: '#',
+    ingredients: ['œuf', 'huile', 'sel', 'poivre'],
+  };
+  const cake = {
+    id: 'cake', name: 'Gâteau', url: '#',
+    ingredients: ['œuf', 'farine', 'sucre', 'beurre'],
+  };
+
+  const eggMatch = calculateRecipeMatch(eggDish, pantry);
+  const cakeMatch = calculateRecipeMatch(cake, pantry);
+  assert.ok(eggMatch.score > cakeMatch.score, `${eggMatch.score} devrait être > ${cakeMatch.score}`);
+  assert.deepEqual(cakeMatch.missingIngredients.sort(), ['beurre', 'farine', 'sucre']);
+});
+
+test('un ingrédient présent dans le titre renforce la pertinence', () => {
+  const pantry = pantryOf({ have: ['œuf'] });
+  const named = { id: 'named', name: 'Œufs vapeur', url: '#', ingredients: ['œuf', 'paprika'] };
+  const incidental = { id: 'incidental', name: 'Préparation vapeur', url: '#', ingredients: ['œuf', 'paprika'] };
+  assert.ok(calculateRecipeMatch(named, pantry).score > calculateRecipeMatch(incidental, pantry).score);
+});
