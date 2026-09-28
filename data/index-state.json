@@ -1,5 +1,5 @@
 {
-  "lastRun": "2026-09-21T09:53:22.784Z",
+  "lastRun": "2026-09-28T10:50:12.853Z",
   "failedIds": {
     "r144505": {
       "reason": "qualite",
@@ -2145,9 +2145,9 @@
     }
   },
   "lastStats": {
-    "discovered": 11532,
-    "alreadyCached": 11160,
-    "newlyFetched": 15,
+    "discovered": 11533,
+    "alreadyCached": 11175,
+    "newlyFetched": 1,
     "refreshed": 0,
     "removed404": 0,
     "skippedCooldown": 357,
@@ -2158,6 +2158,6 @@
       "autre": 0,
       "qualite": 0
     },
-    "totalFinal": 11178
+    "totalFinal": 11179
   }
 }
