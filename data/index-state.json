@@ -1,5 +1,5 @@
 {
-  "lastRun": "2026-10-12T11:53:41.803Z",
+  "lastRun": "2026-10-19T09:49:47.131Z",
   "failedIds": {
     "r144505": {
       "reason": "qualite",
@@ -2145,9 +2145,9 @@
     }
   },
   "lastStats": {
-    "discovered": 11535,
-    "alreadyCached": 11174,
-    "newlyFetched": 5,
+    "discovered": 11533,
+    "alreadyCached": 11177,
+    "newlyFetched": 0,
     "refreshed": 0,
     "removed404": 0,
     "skippedCooldown": 356,
