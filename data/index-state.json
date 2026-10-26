@@ -1,5 +1,5 @@
 {
-  "lastRun": "2026-10-19T09:49:47.131Z",
+  "lastRun": "2026-10-26T10:02:37.406Z",
   "failedIds": {
     "r144505": {
       "reason": "qualite",
@@ -2142,10 +2142,16 @@
       "message": "Fiche probablement non traduite en français",
       "lastAttempt": "2026-10-05T11:30:33.356Z",
       "attempts": 2
+    },
+    "r1281560": {
+      "reason": "qualite",
+      "message": "Fiche probablement non traduite en français",
+      "lastAttempt": "2026-10-26T10:02:36.554Z",
+      "attempts": 1
     }
   },
   "lastStats": {
-    "discovered": 11533,
+    "discovered": 11534,
     "alreadyCached": 11177,
     "newlyFetched": 0,
     "refreshed": 0,
@@ -2156,7 +2162,7 @@
       "404": 0,
       "timeout": 0,
       "autre": 0,
-      "qualite": 0
+      "qualite": 1
     },
     "totalFinal": 11185
   }
