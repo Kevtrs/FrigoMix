@@ -1,2141 +1,2141 @@
 {
-  "lastRun": "2026-10-26T10:02:37.406Z",
+  "lastRun": "2026-11-02T12:22:39.180Z",
   "failedIds": {
     "r144505": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:26:07.645Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:17:57.247Z",
+      "attempts": 4
     },
     "r130952": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:26:08.366Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:17:58.381Z",
+      "attempts": 4
     },
     "r761464": {
       "reason": "qualite",
       "message": "Extraction d’ingrédients trop pauvre",
-      "lastAttempt": "2026-10-05T11:26:09.001Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:17:59.241Z",
+      "attempts": 4
     },
     "r137777": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:26:10.525Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:18:01.607Z",
+      "attempts": 4
     },
     "r54199": {
       "reason": "qualite",
       "message": "Extraction d’ingrédients trop pauvre",
-      "lastAttempt": "2026-10-05T11:26:11.510Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:18:00.502Z",
+      "attempts": 4
     },
     "r629638": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:26:12.375Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:18:02.592Z",
+      "attempts": 4
     },
     "r438291": {
       "reason": "qualite",
       "message": "Extraction d’ingrédients trop pauvre",
-      "lastAttempt": "2026-10-05T11:26:13.343Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:18:03.598Z",
+      "attempts": 4
     },
     "r54201": {
       "reason": "qualite",
       "message": "Extraction d’ingrédients trop pauvre",
-      "lastAttempt": "2026-10-05T11:26:14.361Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:18:04.735Z",
+      "attempts": 4
     },
     "r54137": {
       "reason": "qualite",
       "message": "Extraction d’ingrédients trop pauvre",
-      "lastAttempt": "2026-10-05T11:26:15.208Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:18:05.729Z",
+      "attempts": 4
     },
     "r348145": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:26:15.983Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:18:06.419Z",
+      "attempts": 4
     },
     "r82984": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:26:16.810Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:18:07.245Z",
+      "attempts": 4
     },
     "r420409": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:26:17.740Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:18:08.286Z",
+      "attempts": 4
     },
     "r790734": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:26:18.391Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:18:09.503Z",
+      "attempts": 4
     },
     "r145211": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:26:19.586Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:18:10.225Z",
+      "attempts": 4
     },
     "r537775": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:26:20.285Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:18:11.050Z",
+      "attempts": 4
     },
     "r145318": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:26:21.907Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:18:12.441Z",
+      "attempts": 4
     },
     "r96278": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:26:22.606Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:18:13.165Z",
+      "attempts": 4
     },
     "r54198": {
       "reason": "qualite",
       "message": "Extraction d’ingrédients trop pauvre",
-      "lastAttempt": "2026-10-05T11:26:20.956Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:18:11.744Z",
+      "attempts": 4
     },
     "r660063": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:26:25.085Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:18:16.025Z",
+      "attempts": 4
     },
     "r251416": {
       "reason": "qualite",
       "message": "Extraction d’ingrédients trop pauvre",
-      "lastAttempt": "2026-10-05T11:26:24.337Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:18:14.171Z",
+      "attempts": 4
     },
     "r118846": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:26:23.297Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:18:15.172Z",
+      "attempts": 4
     },
     "r295876": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:26:25.981Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:18:18.177Z",
+      "attempts": 4
     },
     "r151124": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:26:27.657Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:18:19.032Z",
+      "attempts": 4
     },
     "r663704": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:26:26.911Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:18:17.018Z",
+      "attempts": 4
     },
     "r174507": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:26:28.493Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:18:19.752Z",
+      "attempts": 4
     },
     "r237746": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:26:29.170Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:18:20.683Z",
+      "attempts": 4
     },
     "r615274": {
       "reason": "qualite",
       "message": "Extraction d’ingrédients trop pauvre",
-      "lastAttempt": "2026-10-05T11:26:30.088Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:18:21.400Z",
+      "attempts": 4
     },
     "r109660": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:26:30.858Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:18:22.112Z",
+      "attempts": 4
     },
     "r704124": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:26:31.601Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:18:22.946Z",
+      "attempts": 4
     },
     "r631970": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:26:32.262Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:18:23.652Z",
+      "attempts": 4
     },
     "r54196": {
       "reason": "qualite",
       "message": "Extraction d’ingrédients trop pauvre",
-      "lastAttempt": "2026-10-05T11:26:32.913Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:18:24.353Z",
+      "attempts": 4
     },
     "r114503": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:26:33.726Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:18:25.523Z",
+      "attempts": 4
     },
     "r725191": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:26:35.347Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:18:27.226Z",
+      "attempts": 4
     },
     "r673618": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:26:36.034Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:18:27.966Z",
+      "attempts": 4
     },
     "r615267": {
       "reason": "qualite",
       "message": "Extraction d’ingrédients trop pauvre",
-      "lastAttempt": "2026-10-05T11:26:34.666Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:18:26.230Z",
+      "attempts": 4
     },
     "r107201": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:26:36.765Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:18:28.730Z",
+      "attempts": 4
     },
     "r212381": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:26:37.499Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:18:29.447Z",
+      "attempts": 4
     },
     "r105711": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:26:38.285Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:18:30.990Z",
+      "attempts": 4
     },
     "r56120": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:26:39.629Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:18:30.298Z",
+      "attempts": 4
     },
     "r101883": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:26:40.821Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:18:31.702Z",
+      "attempts": 4
     },
     "r136215": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:26:41.477Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:18:32.624Z",
+      "attempts": 4
     },
     "r54200": {
       "reason": "qualite",
       "message": "Extraction d’ingrédients trop pauvre",
-      "lastAttempt": "2026-10-05T11:26:43.754Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:18:35.188Z",
+      "attempts": 4
     },
     "r314323": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:26:42.229Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:18:33.630Z",
+      "attempts": 4
     },
     "r608371": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:26:45.356Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:18:37.068Z",
+      "attempts": 4
     },
     "r54197": {
       "reason": "qualite",
       "message": "Extraction d’ingrédients trop pauvre",
-      "lastAttempt": "2026-10-05T11:26:42.968Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:18:36.106Z",
+      "attempts": 4
     },
     "r724730": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:26:44.643Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:18:34.479Z",
+      "attempts": 4
     },
     "r377244": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:26:46.230Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:18:37.922Z",
+      "attempts": 4
     },
     "r512964": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:26:46.915Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:18:38.742Z",
+      "attempts": 4
     },
     "r782250": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:26:47.810Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:18:39.679Z",
+      "attempts": 4
     },
     "r459938": {
       "reason": "qualite",
       "message": "Extraction d’ingrédients trop pauvre",
-      "lastAttempt": "2026-10-05T11:26:48.592Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:18:40.401Z",
+      "attempts": 4
     },
     "r109661": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:26:49.325Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:18:41.102Z",
+      "attempts": 4
     },
     "r111871": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:26:51.453Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:18:45.120Z",
+      "attempts": 4
     },
     "r295883": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:26:50.652Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:18:42.987Z",
+      "attempts": 4
     },
     "r72451": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:26:52.949Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:18:43.671Z",
+      "attempts": 4
     },
     "r800848": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:26:49.980Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:18:42.141Z",
+      "attempts": 4
     },
     "r514902": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:26:53.620Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:18:45.828Z",
+      "attempts": 4
     },
     "r209412": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:26:52.172Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:18:44.420Z",
+      "attempts": 4
     },
     "r557726": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:26:54.274Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:18:46.528Z",
+      "attempts": 4
     },
     "r54202": {
       "reason": "qualite",
       "message": "Extraction d’ingrédients trop pauvre",
-      "lastAttempt": "2026-10-05T11:26:56.652Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:18:48.098Z",
+      "attempts": 4
     },
     "r119736": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:26:55.137Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:18:47.230Z",
+      "attempts": 4
     },
     "r359991": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:26:57.460Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:18:48.798Z",
+      "attempts": 4
     },
     "r818027": {
       "reason": "qualite",
       "message": "Extraction d’ingrédients trop pauvre",
-      "lastAttempt": "2026-10-05T11:26:58.912Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:18:51.224Z",
+      "attempts": 4
     },
     "r451565": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:26:58.147Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:18:50.281Z",
+      "attempts": 4
     },
     "r777569": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:27:00.238Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:18:51.934Z",
+      "attempts": 4
     },
     "r81366": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:27:00.902Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:18:53.793Z",
+      "attempts": 4
     },
     "r348148": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:26:59.583Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:18:52.807Z",
+      "attempts": 4
     },
     "r67300": {
       "reason": "qualite",
       "message": "Extraction d’ingrédients trop pauvre",
-      "lastAttempt": "2026-10-05T11:27:01.710Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:18:49.530Z",
+      "attempts": 4
     },
     "r134100": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:27:03.231Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:18:55.940Z",
+      "attempts": 4
     },
     "r617774": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:27:03.883Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:18:55.226Z",
+      "attempts": 4
     },
     "r150135": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:27:02.512Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:18:54.500Z",
+      "attempts": 4
     },
     "r513897": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:27:04.667Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:18:57.369Z",
+      "attempts": 4
     },
     "r804798": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:27:05.408Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:18:56.665Z",
+      "attempts": 4
     },
     "r387483": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:27:06.156Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:18:58.065Z",
+      "attempts": 4
     },
     "r615273": {
       "reason": "qualite",
       "message": "Extraction d’ingrédients trop pauvre",
-      "lastAttempt": "2026-10-05T11:27:06.805Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:18:59.556Z",
+      "attempts": 4
     },
     "r56223": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:27:08.446Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:19:00.497Z",
+      "attempts": 4
     },
     "r616053": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:27:07.701Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:19:01.224Z",
+      "attempts": 4
     },
     "r409981": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:27:10.593Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:19:03.971Z",
+      "attempts": 4
     },
     "r801882": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:27:09.249Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:19:02.106Z",
+      "attempts": 4
     },
     "r597398": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:27:12.520Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:19:06.140Z",
+      "attempts": 4
     },
     "r766515": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:27:13.340Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:19:07.597Z",
+      "attempts": 4
     },
     "r118862": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:27:09.949Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:19:03.233Z",
+      "attempts": 4
     },
     "r151125": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:27:15.561Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:19:06.899Z",
+      "attempts": 4
     },
     "r767521": {
       "reason": "qualite",
       "message": "Extraction d’ingrédients trop pauvre",
-      "lastAttempt": "2026-10-05T11:27:14.074Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:19:04.675Z",
+      "attempts": 4
     },
     "r57952": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:27:17.035Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:19:09.008Z",
+      "attempts": 4
     },
     "r609108": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:27:16.275Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:19:08.305Z",
+      "attempts": 4
     },
     "r296030": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:27:14.821Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:19:05.377Z",
+      "attempts": 4
     },
     "r359944": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:27:17.775Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:19:09.881Z",
+      "attempts": 4
     },
     "r349732": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:27:18.427Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:19:11.558Z",
+      "attempts": 4
     },
     "r64298": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:27:19.880Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:19:10.619Z",
+      "attempts": 4
     },
     "r109657": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:27:21.364Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:19:13.937Z",
+      "attempts": 4
     },
     "r776274": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:27:22.179Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:19:14.853Z",
+      "attempts": 4
     },
     "r332278": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:27:22.878Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:19:16.508Z",
+      "attempts": 4
     },
     "r908239": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:27:11.654Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:18:58.831Z",
+      "attempts": 4
     },
     "r105954": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:27:19.104Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:19:12.369Z",
+      "attempts": 4
     },
     "r86090": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:27:20.646Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:19:13.075Z",
+      "attempts": 4
     },
     "r139090": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:27:24.389Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:19:18.710Z",
+      "attempts": 4
     },
     "r285179": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:27:23.551Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:19:17.293Z",
+      "attempts": 4
     },
     "r663706": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:27:25.037Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:19:19.571Z",
+      "attempts": 4
     },
     "r513894": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:27:25.940Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:19:20.330Z",
+      "attempts": 4
     },
     "r68900": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:27:26.656Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:19:18.008Z",
+      "attempts": 4
     },
     "r641880": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:27:28.243Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:19:21.764Z",
+      "attempts": 4
     },
     "r900497": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:27:29.869Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:19:21.043Z",
+      "attempts": 4
     },
     "r118851": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:27:27.424Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:19:15.708Z",
+      "attempts": 4
     },
     "r96325": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:27:30.558Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:19:23.414Z",
+      "attempts": 4
     },
     "r900527": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:27:28.920Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:19:22.679Z",
+      "attempts": 4
     },
     "r97656": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:27:31.341Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:19:24.209Z",
+      "attempts": 4
     },
     "r112754": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:27:32.106Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:19:25.636Z",
+      "attempts": 4
     },
     "r237753": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:27:32.871Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:19:24.933Z",
+      "attempts": 4
     },
     "r761470": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:27:33.561Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:19:26.346Z",
+      "attempts": 4
     },
     "r54203": {
       "reason": "qualite",
       "message": "Extraction d’ingrédients trop pauvre",
-      "lastAttempt": "2026-10-05T11:27:34.372Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:19:27.199Z",
+      "attempts": 4
     },
     "r594726": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:27:35.078Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:19:28.911Z",
+      "attempts": 4
     },
     "r109656": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:27:35.730Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:19:29.595Z",
+      "attempts": 4
     },
     "r82296": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:27:36.562Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:19:27.901Z",
+      "attempts": 4
     },
     "r758947": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:27:37.211Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:19:31.004Z",
+      "attempts": 4
     },
     "r608372": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:27:37.877Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:19:31.720Z",
+      "attempts": 4
     },
     "r118857": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:27:38.632Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:19:32.587Z",
+      "attempts": 4
     },
     "r926226": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:27:39.267Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:19:30.297Z",
+      "attempts": 4
     },
     "r801107": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:27:40.009Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:19:34.924Z",
+      "attempts": 4
     },
     "r734128": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:27:41.389Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:19:35.626Z",
+      "attempts": 4
     },
     "r251595": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:27:42.136Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:19:36.342Z",
+      "attempts": 4
     },
     "r134108": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:27:42.773Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:19:33.295Z",
+      "attempts": 4
     },
     "r827102": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:27:40.750Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:19:34.209Z",
+      "attempts": 4
     },
     "r604956": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:27:43.852Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:19:37.205Z",
+      "attempts": 4
     },
     "r446262": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:27:44.763Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:19:37.924Z",
+      "attempts": 4
     },
     "r908686": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:27:46.248Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:19:38.644Z",
+      "attempts": 4
     },
     "r387489": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:27:47.770Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:19:40.136Z",
+      "attempts": 4
     },
     "r56020": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:27:45.573Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:19:40.879Z",
+      "attempts": 4
     },
     "r587549": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:27:48.460Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:19:42.442Z",
+      "attempts": 4
     },
     "r499909": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:27:46.911Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:19:39.430Z",
+      "attempts": 4
     },
     "r760417": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:27:49.955Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:19:43.365Z",
+      "attempts": 4
     },
     "r125677": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:27:50.784Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:19:44.074Z",
+      "attempts": 4
     },
     "r118850": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:27:51.547Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:19:45.649Z",
+      "attempts": 4
     },
     "r770068": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:27:49.208Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:19:41.733Z",
+      "attempts": 4
     },
     "r623493": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:27:52.998Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:19:48.650Z",
+      "attempts": 4
     },
     "r282479": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:27:54.378Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:19:50.055Z",
+      "attempts": 4
     },
     "r114500": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:27:55.084Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:19:50.762Z",
+      "attempts": 4
     },
     "r132268": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:27:55.825Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:19:47.229Z",
+      "attempts": 4
     },
     "r725163": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:27:52.295Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:19:47.945Z",
+      "attempts": 4
     },
     "r319018": {
       "reason": "qualite",
       "message": "Extraction d’ingrédients trop pauvre",
-      "lastAttempt": "2026-10-05T11:27:53.642Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:19:44.794Z",
+      "attempts": 4
     },
     "r765681": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:27:57.162Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:19:49.351Z",
+      "attempts": 4
     },
     "r127924": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:27:57.856Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:19:52.358Z",
+      "attempts": 4
     },
     "r359938": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:27:58.661Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:19:53.083Z",
+      "attempts": 4
     },
     "r751129": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:27:59.496Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:19:46.364Z",
+      "attempts": 4
     },
     "r102590": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:27:56.510Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:19:51.614Z",
+      "attempts": 4
     },
     "r71279": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:28:01.598Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:19:56.394Z",
+      "attempts": 4
     },
     "r490958": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:28:02.254Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:19:53.974Z",
+      "attempts": 4
     },
     "r692559": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:28:03.004Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:19:57.212Z",
+      "attempts": 4
     },
     "r608373": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:28:00.158Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:19:54.827Z",
+      "attempts": 4
     },
     "r234131": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:28:04.601Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:19:59.742Z",
+      "attempts": 4
     },
     "r118493": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:28:05.297Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:20:00.460Z",
+      "attempts": 4
     },
     "r102144": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:28:00.849Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:19:55.545Z",
+      "attempts": 4
     },
     "r726612": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:28:06.064Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:20:01.317Z",
+      "attempts": 4
     },
     "r513893": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:28:03.885Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:19:58.000Z",
+      "attempts": 4
     },
     "r71260": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:28:07.633Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:20:02.867Z",
+      "attempts": 4
     },
     "r68303": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:28:08.375Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:20:03.615Z",
+      "attempts": 4
     },
     "r642054": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:28:09.078Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:20:04.317Z",
+      "attempts": 4
     },
     "r251418": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:28:10.704Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:20:05.914Z",
+      "attempts": 4
     },
     "r118858": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:28:11.450Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:20:06.631Z",
+      "attempts": 4
     },
     "r44687": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:28:12.222Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:20:07.370Z",
+      "attempts": 4
     },
     "r446249": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:28:12.887Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:20:08.216Z",
+      "attempts": 4
     },
     "r497188": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:28:13.620Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:20:09.039Z",
+      "attempts": 4
     },
     "r512942": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:28:06.837Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:20:02.171Z",
+      "attempts": 4
     },
     "r148403": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:28:14.374Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:20:09.820Z",
+      "attempts": 4
     },
     "r57629": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:28:15.112Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:20:10.529Z",
+      "attempts": 4
     },
     "r550911": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:28:15.953Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:20:05.206Z",
+      "attempts": 4
     },
     "r823959": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:28:09.858Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:19:58.851Z",
+      "attempts": 4
     },
     "r725178": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:28:18.905Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:20:14.118Z",
+      "attempts": 4
     },
     "r773767": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:28:19.549Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:20:14.832Z",
+      "attempts": 4
     },
     "r598732": {
       "reason": "qualite",
       "message": "Extraction d’ingrédients trop pauvre",
-      "lastAttempt": "2026-10-05T11:28:16.902Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:20:11.241Z",
+      "attempts": 4
     },
     "r804517": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:28:20.282Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:20:11.957Z",
+      "attempts": 4
     },
     "r77872": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:28:21.018Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:20:15.575Z",
+      "attempts": 4
     },
     "r615271": {
       "reason": "qualite",
       "message": "Extraction d’ingrédients trop pauvre",
-      "lastAttempt": "2026-10-05T11:28:17.587Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:20:12.698Z",
+      "attempts": 4
     },
     "r315182": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:28:18.246Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:20:13.411Z",
+      "attempts": 4
     },
     "r107064": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:28:21.801Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:20:18.294Z",
+      "attempts": 4
     },
     "r139133": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:28:23.096Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:20:19.878Z",
+      "attempts": 4
     },
     "r412630": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:28:23.993Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:20:16.714Z",
+      "attempts": 4
     },
     "r599418": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:28:25.589Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:20:21.717Z",
+      "attempts": 4
     },
     "r766042": {
       "reason": "qualite",
       "message": "Extraction d’ingrédients trop pauvre",
-      "lastAttempt": "2026-10-05T11:28:27.189Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:20:17.421Z",
+      "attempts": 4
     },
     "r136141": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:28:27.970Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:20:23.233Z",
+      "attempts": 4
     },
     "r766518": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:28:28.643Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:20:23.950Z",
+      "attempts": 4
     },
     "r828567": {
       "reason": "qualite",
       "message": "Extraction d’ingrédients trop pauvre",
-      "lastAttempt": "2026-10-05T11:28:29.437Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:20:24.780Z",
+      "attempts": 4
     },
     "r700978": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:28:30.096Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:20:25.625Z",
+      "attempts": 4
     },
     "r453721": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:28:22.452Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:20:19.072Z",
+      "attempts": 4
     },
     "r306486": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:28:30.821Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:20:26.389Z",
+      "attempts": 4
     },
     "r597396": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:28:31.572Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:20:27.241Z",
+      "attempts": 4
     },
     "r723746": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:28:24.855Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:20:20.782Z",
+      "attempts": 4
     },
     "r114512": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:28:32.270Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:20:28.088Z",
+      "attempts": 4
     },
     "r97645": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:28:32.914Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:20:28.808Z",
+      "attempts": 4
     },
     "r513898": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:28:33.693Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:20:29.511Z",
+      "attempts": 4
     },
     "r148065": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:28:34.357Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:20:30.233Z",
+      "attempts": 4
     },
     "r144291": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:28:35.160Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:20:31.232Z",
+      "attempts": 4
     },
     "r151657": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:28:35.868Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:20:32.113Z",
+      "attempts": 4
     },
     "r467040": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:28:36.509Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:20:39.316Z",
+      "attempts": 4
     },
     "r208470": {
       "reason": "qualite",
       "message": "Extraction d’ingrédients trop pauvre",
-      "lastAttempt": "2026-10-05T11:28:37.163Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:20:33.690Z",
+      "attempts": 4
     },
     "r755265": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:28:38.020Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:20:34.400Z",
+      "attempts": 4
     },
     "r102146": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:28:38.754Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:20:35.989Z",
+      "attempts": 4
     },
     "r801896": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:28:26.529Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:20:22.465Z",
+      "attempts": 4
     },
     "r315776": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:28:39.410Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:20:36.844Z",
+      "attempts": 4
     },
     "r126851": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:28:40.060Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:20:38.460Z",
+      "attempts": 4
     },
     "r139085": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:28:40.716Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:20:40.241Z",
+      "attempts": 4
     },
     "r800679": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:28:41.420Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:20:40.950Z",
+      "attempts": 4
     },
     "r212981": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:28:42.121Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:20:41.664Z",
+      "attempts": 4
     },
     "r766306": {
       "reason": "qualite",
       "message": "Extraction d’ingrédients trop pauvre",
-      "lastAttempt": "2026-10-05T11:28:42.773Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:20:32.821Z",
+      "attempts": 4
     },
     "r55968": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:28:43.500Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:20:42.487Z",
+      "attempts": 4
     },
     "r596444": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:28:45.150Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:20:43.195Z",
+      "attempts": 4
     },
     "r118498": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:28:45.856Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:20:43.907Z",
+      "attempts": 4
     },
     "r112825": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:28:46.569Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:20:44.637Z",
+      "attempts": 4
     },
     "r149345": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:28:47.453Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:20:45.355Z",
+      "attempts": 4
     },
     "r550325": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:28:48.155Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:20:46.129Z",
+      "attempts": 4
     },
     "r511332": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:28:48.821Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:20:46.828Z",
+      "attempts": 4
     },
     "r601101": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:28:50.279Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:20:48.307Z",
+      "attempts": 4
     },
     "r56232": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:28:50.930Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:20:49.173Z",
+      "attempts": 4
     },
     "r55951": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:28:44.270Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:20:35.266Z",
+      "attempts": 4
     },
     "r780122": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:28:51.662Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:20:50.018Z",
+      "attempts": 4
     },
     "r636119": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:28:52.363Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:20:50.801Z",
+      "attempts": 4
     },
     "r763380": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:28:55.148Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:20:53.063Z",
+      "attempts": 4
     },
     "r144590": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:28:49.548Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:20:47.595Z",
+      "attempts": 4
     },
     "r251592": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:28:55.903Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:20:53.808Z",
+      "attempts": 4
     },
     "r286812": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:28:57.384Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:20:56.170Z",
+      "attempts": 4
     },
     "r319014": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:28:58.033Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:20:56.895Z",
+      "attempts": 4
     },
     "r764745": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:28:58.898Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:20:57.814Z",
+      "attempts": 4
     },
     "r359946": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:28:59.667Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:20:58.661Z",
+      "attempts": 4
     },
     "r903444": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:28:53.656Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:20:51.649Z",
+      "attempts": 4
     },
     "r359937": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:28:54.373Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:20:52.348Z",
+      "attempts": 4
     },
     "r319068": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:29:00.464Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:20:59.374Z",
+      "attempts": 4
     },
     "r789333": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:29:01.200Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:21:00.231Z",
+      "attempts": 4
     },
     "r71284": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:29:01.941Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:21:01.129Z",
+      "attempts": 4
     },
     "r473776": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:29:02.599Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:21:01.931Z",
+      "attempts": 4
     },
     "r750101": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:29:03.288Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:21:02.778Z",
+      "attempts": 4
     },
     "r130956": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:29:04.703Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:20:54.572Z",
+      "attempts": 4
     },
     "r908248": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:28:56.617Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:20:55.330Z",
+      "attempts": 4
     },
     "r118847": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:29:05.575Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:21:04.202Z",
+      "attempts": 4
     },
     "r84743": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:29:06.406Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:21:04.903Z",
+      "attempts": 4
     },
     "r359943": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:29:07.061Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:21:05.772Z",
+      "attempts": 4
     },
     "r816421": {
       "reason": "qualite",
       "message": "Extraction d’ingrédients trop pauvre",
-      "lastAttempt": "2026-10-05T11:29:07.712Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:21:06.481Z",
+      "attempts": 4
     },
     "r931051": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:29:08.357Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:21:07.194Z",
+      "attempts": 4
     },
     "r825224": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:29:09.014Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:21:07.920Z",
+      "attempts": 4
     },
     "r98567": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:29:09.758Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:21:08.674Z",
+      "attempts": 4
     },
     "r789853": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:29:10.493Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:21:09.486Z",
+      "attempts": 4
     },
     "r614584": {
       "reason": "qualite",
       "message": "Extraction d’ingrédients trop pauvre",
-      "lastAttempt": "2026-10-05T11:29:11.158Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:21:10.202Z",
+      "attempts": 4
     },
     "r4461": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:29:04.048Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:21:03.489Z",
+      "attempts": 4
     },
     "r397417": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:29:11.798Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:21:11.644Z",
+      "attempts": 4
     },
     "r67105": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:29:12.569Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:21:12.523Z",
+      "attempts": 4
     },
     "r761463": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:29:13.269Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:21:13.227Z",
+      "attempts": 4
     },
     "r634999": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:29:14.006Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:21:13.947Z",
+      "attempts": 4
     },
     "r928214": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:29:14.734Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:20:37.764Z",
+      "attempts": 4
     },
     "r469508": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:29:15.402Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:21:15.645Z",
+      "attempts": 4
     },
     "r750040": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:29:17.087Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:21:10.940Z",
+      "attempts": 4
     },
     "r614583": {
       "reason": "qualite",
       "message": "Extraction d’ingrédients trop pauvre",
-      "lastAttempt": "2026-10-05T11:29:18.037Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:21:17.125Z",
+      "attempts": 4
     },
     "r130972": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:29:18.878Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:21:17.917Z",
+      "attempts": 4
     },
     "r550323": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:29:19.607Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:21:19.470Z",
+      "attempts": 4
     },
     "r278203": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:29:20.438Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:21:20.262Z",
+      "attempts": 4
     },
     "r467050": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:29:21.092Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:21:21.140Z",
+      "attempts": 4
     },
     "r132007": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:29:21.740Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:21:21.840Z",
+      "attempts": 4
     },
     "r816422": {
       "reason": "qualite",
       "message": "Extraction d’ingrédients trop pauvre",
-      "lastAttempt": "2026-10-05T11:29:22.382Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:21:22.541Z",
+      "attempts": 4
     },
     "r422670": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:29:23.170Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:21:14.793Z",
+      "attempts": 4
     },
     "r614625": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:29:23.821Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:21:23.239Z",
+      "attempts": 4
     },
     "r615272": {
       "reason": "qualite",
       "message": "Extraction d’ingrédients trop pauvre",
-      "lastAttempt": "2026-10-05T11:29:24.559Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:21:23.943Z",
+      "attempts": 4
     },
     "r821192": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:29:25.298Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:21:24.829Z",
+      "attempts": 4
     },
     "r118007": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:29:26.086Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:21:25.547Z",
+      "attempts": 4
     },
     "r84963": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:29:26.734Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:21:26.399Z",
+      "attempts": 4
     },
     "r707049": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:29:27.386Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:21:27.112Z",
+      "attempts": 4
     },
     "r412627": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:29:28.264Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:21:35.829Z",
+      "attempts": 4
     },
     "r750127": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:29:29.712Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:21:27.976Z",
+      "attempts": 4
     },
     "r908730": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:29:30.519Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:21:28.681Z",
+      "attempts": 4
     },
     "r733359": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:29:31.281Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:21:29.528Z",
+      "attempts": 4
     },
     "r36504": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:29:31.929Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:21:30.230Z",
+      "attempts": 4
     },
     "r825675": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:29:32.664Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:21:30.959Z",
+      "attempts": 4
     },
     "r109659": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:29:33.320Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:21:31.830Z",
+      "attempts": 4
     },
     "r726616": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:29:33.978Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:21:32.728Z",
+      "attempts": 4
     },
     "r736031": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:29:34.629Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:21:33.575Z",
+      "attempts": 4
     },
     "r767533": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:29:35.460Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:21:34.312Z",
+      "attempts": 4
     },
     "r820315": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:29:36.148Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:21:36.552Z",
+      "attempts": 4
     },
     "r826369": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:29:36.801Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:21:18.620Z",
+      "attempts": 4
     },
     "r148070": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:29:37.461Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:21:37.268Z",
+      "attempts": 4
     },
     "r387492": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:29:38.247Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:21:38.014Z",
+      "attempts": 4
     },
     "r80412": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:29:38.971Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:21:38.934Z",
+      "attempts": 4
     },
     "r823960": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:29:28.920Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:21:39.684Z",
+      "attempts": 4
     },
     "r513600": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:29:39.781Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:21:40.621Z",
+      "attempts": 4
     },
     "r146155": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:29:40.581Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:21:41.428Z",
+      "attempts": 4
     },
     "r359940": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:29:41.270Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:21:42.146Z",
+      "attempts": 4
     },
     "r436587": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:29:41.964Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:21:51.188Z",
+      "attempts": 4
     },
     "r700026": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:29:42.785Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:21:42.851Z",
+      "attempts": 4
     },
     "r75900": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:29:43.686Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:21:43.552Z",
+      "attempts": 4
     },
     "r295889": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:29:45.055Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:21:45.012Z",
+      "attempts": 4
     },
     "r452203": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:29:45.797Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:21:45.759Z",
+      "attempts": 4
     },
     "r717272": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:29:46.448Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:21:46.598Z",
+      "attempts": 4
     },
     "r918023": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:29:16.283Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:21:16.368Z",
+      "attempts": 4
     },
     "r818026": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:29:48.457Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:21:48.884Z",
+      "attempts": 4
     },
     "r782252": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:29:49.175Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:21:49.617Z",
+      "attempts": 4
     },
     "r359945": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:29:49.874Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:21:50.473Z",
+      "attempts": 4
     },
     "r913936": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:29:44.401Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:21:44.292Z",
+      "attempts": 4
     },
     "r701255": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:29:51.285Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:21:52.805Z",
+      "attempts": 4
     },
     "r806003": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:29:51.994Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:21:53.530Z",
+      "attempts": 4
     },
     "r931736": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:29:47.110Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:21:35.016Z",
+      "attempts": 4
     },
     "r679887": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:29:47.790Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:21:47.416Z",
+      "attempts": 4
     },
     "r387486": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:29:52.704Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:21:48.142Z",
+      "attempts": 4
     },
     "r679888": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:29:53.355Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:21:54.381Z",
+      "attempts": 4
     },
     "r359942": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:29:54.072Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:21:55.791Z",
+      "attempts": 4
     },
     "r359947": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:29:54.879Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:21:56.634Z",
+      "attempts": 4
     },
     "r730365": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:29:50.534Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:21:51.929Z",
+      "attempts": 4
     },
     "r829215": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:29:55.617Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:21:58.118Z",
+      "attempts": 4
     },
     "r811423": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:29:56.270Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:21:58.978Z",
+      "attempts": 4
     },
     "r456998": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:29:56.918Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:21:59.838Z",
+      "attempts": 4
     },
     "r306430": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:29:57.786Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:22:00.545Z",
+      "attempts": 4
     },
     "r130964": {
       "reason": "qualite",
       "message": "Extraction d’ingrédients trop pauvre",
-      "lastAttempt": "2026-10-05T11:29:58.442Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:22:02.096Z",
+      "attempts": 4
     },
     "r615268": {
       "reason": "qualite",
       "message": "Extraction d’ingrédients trop pauvre",
-      "lastAttempt": "2026-10-05T11:29:59.103Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:22:02.827Z",
+      "attempts": 4
     },
     "r209618": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:29:59.843Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:22:03.620Z",
+      "attempts": 4
     },
     "r145317": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:30:00.494Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:22:04.391Z",
+      "attempts": 4
     },
     "r926280": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:30:01.243Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:21:55.089Z",
+      "attempts": 4
     },
     "r825263": {
       "reason": "qualite",
       "message": "Extraction d’ingrédients trop pauvre",
-      "lastAttempt": "2026-10-05T11:30:01.885Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:22:05.133Z",
+      "attempts": 4
     },
     "r806024": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:30:02.700Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:21:57.355Z",
+      "attempts": 4
     },
     "r701245": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:30:03.345Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:22:06.882Z",
+      "attempts": 4
     },
     "r902511": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:30:03.993Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:22:07.580Z",
+      "attempts": 4
     },
     "r763279": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:30:04.767Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:22:08.288Z",
+      "attempts": 4
     },
     "r751131": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:30:05.584Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:22:10.111Z",
+      "attempts": 4
     },
     "r112749": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:30:06.266Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:22:10.816Z",
+      "attempts": 4
     },
     "r285189": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:30:06.913Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:22:11.597Z",
+      "attempts": 4
     },
     "r904841": {
       "reason": "qualite",
       "message": "Extraction d’ingrédients trop pauvre",
-      "lastAttempt": "2026-10-05T11:30:07.543Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:22:12.298Z",
+      "attempts": 4
     },
     "r923969": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:30:08.191Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:22:13.157Z",
+      "attempts": 4
     },
     "r88566": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:30:08.946Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:22:13.854Z",
+      "attempts": 4
     },
     "r901350": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:30:09.612Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:22:06.004Z",
+      "attempts": 4
     },
     "r568509": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:30:10.441Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:22:14.720Z",
+      "attempts": 4
     },
     "r806032": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:30:11.209Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:22:15.571Z",
+      "attempts": 4
     },
     "r615270": {
       "reason": "qualite",
       "message": "Extraction d’ingrédients trop pauvre",
-      "lastAttempt": "2026-10-05T11:30:12.557Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:22:16.984Z",
+      "attempts": 4
     },
     "r614585": {
       "reason": "qualite",
       "message": "Extraction d’ingrédients trop pauvre",
-      "lastAttempt": "2026-10-05T11:30:13.236Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:22:17.726Z",
+      "attempts": 4
     },
     "r614581": {
       "reason": "qualite",
       "message": "Extraction d’ingrédients trop pauvre",
-      "lastAttempt": "2026-10-05T11:30:13.889Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:22:18.440Z",
+      "attempts": 4
     },
     "r769108": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:30:14.603Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:22:19.246Z",
+      "attempts": 4
     },
     "r56267": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:30:15.249Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:22:09.268Z",
+      "attempts": 4
     },
     "r296239": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:30:15.921Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:22:19.961Z",
+      "attempts": 4
     },
     "r56643": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:30:16.749Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:22:20.676Z",
+      "attempts": 4
     },
     "r145316": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:30:17.396Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:22:21.379Z",
+      "attempts": 4
     },
     "r931817": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:30:18.077Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:22:22.101Z",
+      "attempts": 4
     },
     "r280974": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:30:19.522Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:22:24.026Z",
+      "attempts": 4
     },
     "r931825": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:30:20.175Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:22:25.542Z",
+      "attempts": 4
     },
     "r825262": {
       "reason": "qualite",
       "message": "Extraction d’ingrédients trop pauvre",
-      "lastAttempt": "2026-10-05T11:30:20.854Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:22:26.344Z",
+      "attempts": 4
     },
     "r819640": {
       "reason": "qualite",
       "message": "Extraction d’ingrédients trop pauvre",
-      "lastAttempt": "2026-10-05T11:30:21.509Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:22:27.104Z",
+      "attempts": 4
     },
     "r819636": {
       "reason": "qualite",
       "message": "Extraction d’ingrédients trop pauvre",
-      "lastAttempt": "2026-10-05T11:30:22.202Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:22:27.815Z",
+      "attempts": 4
     },
     "r29281": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:30:23.077Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:22:28.513Z",
+      "attempts": 4
     },
     "r763378": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:30:24.000Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:22:29.411Z",
+      "attempts": 4
     },
     "r926177": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:30:24.656Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:22:30.119Z",
+      "attempts": 4
     },
     "r931849": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:30:11.858Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:22:01.399Z",
+      "attempts": 4
     },
     "r804792": {
       "reason": "qualite",
       "message": "Extraction d’ingrédients trop pauvre",
-      "lastAttempt": "2026-10-05T11:30:25.952Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:22:30.858Z",
+      "attempts": 4
     },
     "r943947": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:30:18.750Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:22:22.871Z",
+      "attempts": 4
     },
     "r923845": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:30:27.564Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:22:24.746Z",
+      "attempts": 4
     },
     "r819638": {
       "reason": "qualite",
       "message": "Extraction d’ingrédients trop pauvre",
-      "lastAttempt": "2026-10-05T11:30:28.269Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:22:32.304Z",
+      "attempts": 4
     },
     "r901355": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:30:28.957Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:22:33.014Z",
+      "attempts": 4
     },
     "r931337": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:30:29.676Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:22:33.728Z",
+      "attempts": 4
     },
     "r926142": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:30:30.447Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:22:34.604Z",
+      "attempts": 4
     },
     "r931848": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:30:25.302Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:22:16.268Z",
+      "attempts": 4
     },
     "r769105": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:30:31.110Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:22:35.376Z",
+      "attempts": 4
     },
     "r931732": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:30:31.824Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:22:36.077Z",
+      "attempts": 4
     },
     "r819637": {
       "reason": "qualite",
       "message": "Extraction d’ingrédients trop pauvre",
-      "lastAttempt": "2026-10-05T11:30:34.148Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:22:36.856Z",
+      "attempts": 4
     },
     "r819639": {
       "reason": "qualite",
       "message": "Extraction d’ingrédients trop pauvre",
-      "lastAttempt": "2026-10-05T11:30:34.858Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:22:37.631Z",
+      "attempts": 4
     },
     "r825261": {
       "reason": "qualite",
       "message": "Extraction d’ingrédients trop pauvre",
-      "lastAttempt": "2026-10-05T11:30:35.506Z",
-      "attempts": 3
+      "lastAttempt": "2026-11-02T12:22:38.357Z",
+      "attempts": 4
     },
     "r950056": {
       "reason": "qualite",
       "message": "Fiche probablement non traduite en français",
-      "lastAttempt": "2026-10-05T11:30:26.847Z",
-      "attempts": 2
+      "lastAttempt": "2026-11-02T12:22:31.583Z",
+      "attempts": 3
     },
     "r996724": {
       "reason": "qualite",
@@ -2156,13 +2156,13 @@
     "newlyFetched": 0,
     "refreshed": 0,
     "removed404": 0,
-    "skippedCooldown": 356,
+    "skippedCooldown": 1,
     "errors": {
       "403": 0,
       "404": 0,
       "timeout": 0,
       "autre": 0,
-      "qualite": 1
+      "qualite": 356
     },
     "totalFinal": 11185
   }
