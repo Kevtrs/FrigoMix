@@ -39,27 +39,30 @@ cadre réel mesuré au pied à coulisse servent à caler les cotes et l'aspect.
 > Rappel juridique : je ne suis pas juriste. Pour la mention du nom « IKEA RÖDALM » dans vos fiches
 > (usage descriptif d'une marque), un avis professionnel peut être utile.
 
-## Cotes utilisées (PROVISOIRES)
+## Cotes utilisées (mesurées sur un modèle de référence)
 
-| Cote | Valeur | Origine |
-|---|---|---|
-| Extérieur | 230 × 320 mm | brief |
-| Profondeur | 30 mm | brief |
-| Format papier | 210 × 300 mm | brief |
-| Largeur de moulure vue de face | 11,5 mm → ouverture visible 207 × 297 mm | hypothèse |
-| Retrait du papier sous la face avant | 24,3 mm | hypothèse (dos enfoncé de 3 mm, panneau 2,5 mm) |
-| Protection | PET 1 mm, à 2 mm sous la face avant | hypothèse |
-| Hauteur libre pour les reliefs sous la protection | **21,3 mm** | calculée |
+Relevées sur un GLB de référence reçu ensuite (voir « Origine du GLB reçu » ci-dessous). Ce sont des
+dimensions d'un objet réel, reprises dans notre propre modèle ; aucune géométrie n'a été copiée.
 
-### À mesurer sur un vrai RÖDALM (10 minutes au pied à coulisse)
+| Cote | Valeur |
+|---|---|
+| Extérieur | 228 × 318 mm (et non 230 × 320) |
+| Profondeur totale | 32,2 mm |
+| Largeur de moulure vue de face | 15 mm → **ouverture visible 198 × 287,6 mm** |
+| Format du papier | 210 × 300 mm : 6 mm de papier restent cachés sous la moulure de chaque côté |
+| Plan du papier | à 13,3 mm de l'arrière, soit **18,9 mm sous la face avant** |
+| Panneau arrière | panneau de fibres brun, ~4 mm |
+| Hauteur libre pour les reliefs sous la protection | **15,9 mm** (avec protection placée à 2 mm sous la face avant) |
 
-1. Largeur et hauteur extérieures, profondeur totale.
-2. Largeur de la moulure vue de face (ou directement l'ouverture visible).
-3. Distance entre la face avant et le papier (profondeur intérieure).
-4. Distance face avant → protection, épaisseur de la protection, matière (verre ou plastique).
-5. Recul du panneau arrière, son épaisseur et sa couleur.
-6. Nombre et position des pattes de fixation, type d'attache murale, pied éventuel.
-7. Rayon des arêtes avant (arrondies ou vives).
+À confirmer sur un vrai cadre : position et nature de la protection, rayon des arêtes, pattes de fixation.
 
-Il suffit ensuite de modifier `public/shared/rodalm.json` et de lancer `npm run build:frame` :
-tous les produits en profitent.
+## Origine du GLB reçu (`R_DALM_cadre_-_noir_by_sankah.glb`)
+
+Les métadonnées internes du fichier contiennent : le numéro d'article IKEA `00548882`, un nom de nœud
+`ASY_ART_00548882_S01_NV01`, des matériaux nommés `IKEA BLACK no 1 Foil Flat pre gloss 10 Q2` et
+`HARDBOARD Brown backpanel…`, et un identifiant `cascade-scene-0`. Ce sont des traces du fichier 3D
+**d'IKEA lui-même** (2 060 triangles, textures réduites). Je ne peux pas prouver comment le prestataire
+l'a obtenu, mais le fichier ne ressemble pas à une modélisation originale.
+
+Conséquence : **ne pas publier ce fichier sur la boutique** (voir section « Peut-on utiliser ce modèle »).
+Il n'a pas été ajouté au dépôt. Seules ses dimensions ont servi de référence.

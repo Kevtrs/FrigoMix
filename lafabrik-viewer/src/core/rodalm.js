@@ -24,8 +24,9 @@ export function rodalmMetrics(p) {
   const rebateD = Math.min((W - p.paper.width - 2 * clear) / 2, (H - p.paper.height - 2 * clear) / 2);
   const face = p.faceWidth;
   const backZ0 = p.back.insetFromRear; // face arrière du panneau
-  const backZ1 = backZ0 + p.back.thickness; // face avant du panneau = papier
-  const paperZ = backZ1 + 0.2; // épaisseur du papier
+  // Plan du papier : mesuré depuis l'arrière si `paperFromRear` est fourni, sinon posé sur le panneau.
+  const paperZ = p.paperFromRear ?? backZ0 + p.back.thickness + 0.2;
+  const backZ1 = Math.min(backZ0 + p.back.thickness, paperZ - 0.2);
   const glassFront = D - p.glass.recessFromFront;
   const glassBack = glassFront - p.glass.thickness;
   return {
