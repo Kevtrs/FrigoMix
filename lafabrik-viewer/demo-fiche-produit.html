@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Exemple d'intégration — fiche produit</title>
+  <meta name="robots" content="noindex">
+  <style>
+    :root { color-scheme: light; }
+    body { margin:0; font:16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; color:#111; background:#fff; }
+    .wrap { max-width:1180px; margin:0 auto; padding:24px 16px; display:grid; grid-template-columns: 1.3fr 1fr; gap:40px; }
+    .gallery { display:flex; flex-direction:column; gap:12px; }
+    .thumbs { display:flex; gap:8px; }
+    .thumbs button { width:72px; height:90px; border:1px solid #ddd; border-radius:8px; background:#f3f3f1; padding:0; cursor:pointer; overflow:hidden; font-size:12px; }
+    .thumbs button.on { border-color:#111; }
+    .thumbs img { width:100%; height:100%; object-fit:cover; }
+    .note { background:#fff7e0; border:1px solid #f1d58a; border-radius:8px; padding:10px 14px; font-size:14px; }
+    h1 { font-size:26px; margin:0 0 8px; }
+    .price { font-size:22px; font-weight:700; margin:12px 0 20px; }
+    .buy { display:block; width:100%; padding:14px; border:0; border-radius:999px; background:#111; color:#fff; font:inherit; font-weight:600; }
+    @media (max-width: 860px) { .wrap { grid-template-columns:1fr; gap:20px; } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="gallery">
+      <!-- ▼ BLOC À INTÉGRER DANS LA FICHE PRODUIT ▼ -->
+      <script type="module" src="/src/embed/lafabrik-viewer.js"></script>
+      <lafabrik-viewer
+        src="products/marquez/config.json"
+        poster="products/marquez/poster.webp"
+        alt="Cadre Marc Márquez #93 en relief, vue 3D">
+      </lafabrik-viewer>
+      <!-- ▲ FIN DU BLOC ▲ -->
+      <div class="thumbs">
+        <button class="on" type="button"><img src="products/marquez/poster.webp" alt="3D"></button>
+        <button type="button">Photo 1</button>
+        <button type="button">Photo 2</button>
+      </div>
+      <p class="note">Page d'exemple uniquement (n'est pas la boutique). La 3D ne se télécharge qu'au clic sur « Voir en 3D » : la fiche reste aussi rapide qu'avant.</p>
+    </div>
+    <div>
+      <h1>Cadre relief « The Comeback » #93</h1>
+      <p>Cadre IKEA RÖDALM 21×30 cm, fond imprimé et numéro 93 imprimé en 3D en relief.</p>
+      <div class="price">— €</div>
+      <button class="buy" type="button">Ajouter au panier</button>
+    </div>
+  </div>
+</body>
+</html>

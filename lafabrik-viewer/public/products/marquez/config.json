@@ -1,0 +1,78 @@
+{
+  "id": "marquez",
+  "name": "Marc Márquez — « The Comeback » #93",
+  "frame": "shared/rodalm.json",
+  "background": {
+    "src": "background.webp",
+    "variants": {
+      "high": "background.webp",
+      "low": "background-2048.webp"
+    },
+    "widthMm": 210,
+    "heightMm": 300,
+    "offsetMm": [0, 0],
+    "rotationDeg": 0,
+    "placeholder": true,
+    "pixels": [2480, 3543],
+    "original": "background.png"
+  },
+  "filaments": {
+    "1": {
+      "finish": "matte",
+      "color": "#D2001F",
+      "type": "PLA"
+    },
+    "2": {
+      "finish": "matte",
+      "color": "#F4F4F2",
+      "type": "PLA"
+    }
+  },
+  "relief": {
+    "src": "relief.glb",
+    "pieces": [
+      {
+        "id": "numero-93",
+        "name": "Numero 93",
+        "positionMm": [0, -62, 0],
+        "rotationDeg": [0, 0, 0],
+        "scale": [1, 1, 1],
+        "visible": true,
+        "sizeMm": [112.4, 76.14, 5],
+        "parts": [
+          {
+            "name": "93_face",
+            "filament": 1
+          },
+          {
+            "name": "93_liseré",
+            "filament": 2
+          }
+        ]
+      }
+    ]
+  },
+  "glass": {
+    "enabled": true,
+    "visibleByDefault": true
+  },
+  "camera": {
+    "initial": {
+      "azimuthDeg": -22,
+      "elevationDeg": 8
+    },
+    "fill": 0.84,
+    "minDistanceMm": 140,
+    "maxDistanceMm": 1500,
+    "autoRotate": false
+  },
+  "photos": [],
+  "poster": "poster.webp",
+  "source": {
+    "files": [
+      "placeholder-93.3mf"
+    ],
+    "application": "BambuStudio-01.10.00.00",
+    "importedAt": "2026-11-07T16:50:55.057Z"
+  }
+}

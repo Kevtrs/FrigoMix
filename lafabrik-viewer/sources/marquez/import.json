@@ -1,0 +1,6 @@
+{
+  "comment": "Sources du relief Márquez. Remplacer placeholder-93.3mf par le vrai projet Bambu Studio. Pour des STL : { \"file\": \"x.stl\", \"piece\": \"numero-93\", \"part\": \"face\", \"filament\": 1 }",
+  "sources": [
+    { "file": "placeholder-93.3mf", "pieces": { "Numero 93": "numero-93" } }
+  ]
+}

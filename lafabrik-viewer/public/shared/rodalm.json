@@ -1,0 +1,32 @@
+{
+  "id": "rodalm-21x30-black",
+  "label": "IKEA RÖDALM 21×30 cm noir (005.488.82)",
+  "status": "PROVISOIRE : valeurs de départ du brief, à confirmer au pied à coulisse (ikea.com inaccessible depuis l'environnement de développement)",
+  "units": "mm",
+  "outer": { "width": 230, "height": 320, "depth": 30 },
+  "paper": { "width": 210, "height": 300 },
+  "faceWidth": 11.5,
+  "rebate": { "clearance": 1.0 },
+  "edgeRadius": 0.8,
+  "miterGap": 0.12,
+  "back": {
+    "thickness": 2.5,
+    "insetFromRear": 3.0,
+    "color": "#46423d",
+    "roughness": 0.85
+  },
+  "glass": {
+    "type": "PET",
+    "thickness": 1.0,
+    "recessFromFront": 2.0,
+    "opacity": 0.06
+  },
+  "material": { "color": "#181818", "roughness": 0.5, "metalness": 0.0, "clearcoat": 0.05 },
+  "hardware": {
+    "turnTabs": 6,
+    "hangers": [
+      { "orientation": "portrait", "y": 125 },
+      { "orientation": "landscape", "x": 85 }
+    ]
+  }
+}

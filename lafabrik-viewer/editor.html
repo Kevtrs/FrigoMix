@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LaFabrik — Mode édition</title>
+  <meta name="robots" content="noindex, nofollow">
+  <style>
+    :root { color-scheme: light; }
+    html, body { margin:0; height:100%; background:#f3f3f1; font:14px/1.4 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; color:#111; overflow:hidden; }
+    #stage { position:fixed; inset:0 300px 0 0; }
+    #overlay { position:absolute; inset:0; pointer-events:none; overflow:hidden; }
+    #overlay img { position:absolute; inset:0; width:100%; height:100%; object-fit:contain; transform-origin:center; }
+    #topbar { position:fixed; left:12px; top:12px; display:flex; gap:6px; flex-wrap:wrap; max-width:calc(100vw - 340px); z-index:5; }
+    #topbar button, #topbar select { font:inherit; padding:7px 11px; border:1px solid #ddd; background:#fff; border-radius:8px; cursor:pointer; }
+    #topbar .on { background:#111; color:#fff; border-color:#111; }
+    #status { position:fixed; left:12px; bottom:12px; right:312px; font-size:12.5px; color:#555; z-index:5; display:flex; gap:12px; flex-wrap:wrap; }
+    #status .warn { color:#b3261e; font-weight:600; }
+    #status .dirty { color:#9a5b00; font-weight:600; }
+    .lil-gui.root { position:fixed; top:0; right:0; width:300px; max-height:100%; overflow:auto; --width:300px; }
+    #help { position:fixed; left:12px; top:56px; background:rgba(255,255,255,.95); border:1px solid #e3e3e3; border-radius:10px; padding:10px 14px; font-size:12.5px; max-width:360px; z-index:5; }
+    #help[hidden] { display:none; }
+    kbd { background:#eee; border-radius:4px; padding:0 4px; font-size:11.5px; }
+  </style>
+</head>
+<body>
+  <div id="stage"><div id="overlay" hidden><img id="overlay-img" alt=""></div></div>
+  <div id="topbar">
+    <select id="product" title="Produit"></select>
+    <button data-view="front">Face</button>
+    <button data-view="side">Profil</button>
+    <button data-view="back">Dos</button>
+    <button data-view="initial">3/4</button>
+    <button id="mode-t" class="on" title="Déplacer (W)">Déplacer</button>
+    <button id="mode-r" title="Pivoter (E)">Pivoter</button>
+    <button id="grid-btn" title="Grille millimétrée 10 mm sur le fond">Grille</button>
+    <button id="help-btn">Aide</button>
+    <button id="save" title="Ctrl+S">Enregistrer</button>
+  </div>
+  <div id="help" hidden>
+    <b>Mode édition (préparation des produits)</b><br>
+    Cliquer une pièce pour la sélectionner, puis glisser la flèche/l'anneau.<br>
+    <kbd>←</kbd><kbd>→</kbd><kbd>↑</kbd><kbd>↓</kbd> déplacer de 0,5 mm (<kbd>Maj</kbd> 5 mm, <kbd>Alt</kbd> 0,1 mm)<br>
+    <kbd>Pg↑</kbd>/<kbd>Pg↓</kbd> profondeur Z · <kbd>Q</kbd>/<kbd>D</kbd> rotation ±1° · <kbd>W</kbd>/<kbd>E</kbd> déplacer/pivoter<br>
+    <kbd>Ctrl</kbd>+<kbd>Z</kbd> annuler · <kbd>Ctrl</kbd>+<kbd>S</kbd> enregistrer · <kbd>Échap</kbd> désélectionner<br>
+    Comparaison : « Photo de référence » dans le panneau, en vue Face.<br>
+    Coordonnées en mm : origine = centre du papier, X droite, Y haut, Z vers l'avant (0 = posé sur le papier).
+  </div>
+  <div id="status"><span id="st-load">Chargement…</span><span id="st-sel"></span><span id="st-warn" class="warn"></span><span id="st-dirty" class="dirty"></span></div>
+  <script type="module" src="/src/editor/editor.js"></script>
+</body>
+</html>

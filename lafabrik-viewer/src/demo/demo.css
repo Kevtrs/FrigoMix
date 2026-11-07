@@ -1,0 +1,32 @@
+:root { --bg:#ffffff; --fg:#111111; --muted:#6b6b6b; --line:#e7e7e4; --accent:#0058a3; color-scheme: light; }
+* { box-sizing: border-box; }
+html, body { margin:0; background:var(--bg); color:var(--fg); font: 15px/1.45 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+a { color: var(--fg); }
+.top { display:flex; align-items:baseline; gap:12px; padding:14px 20px; border-bottom:1px solid var(--line); flex-wrap:wrap; }
+.top nav { margin-left:auto; display:flex; gap:16px; font-size:14px; }
+.muted { color:var(--muted); }
+.small { font-size:13px; }
+.layout { display:grid; grid-template-columns: minmax(0, 1.5fr) minmax(280px, 1fr); gap:28px; padding:20px; max-width:1280px; margin:0 auto; }
+.viewer-wrap { position:relative; }
+lafabrik-viewer { width:100%; --lf-aspect: 4 / 5; max-height: calc(100dvh - 120px); }
+.overlay { position:absolute; inset:0; pointer-events:none; overflow:hidden; border-radius:12px; }
+.overlay img { position:absolute; inset:0; width:100%; height:100%; object-fit:contain; transform-origin:center; }
+.panel h1 { font-size:22px; margin:10px 0 4px; }
+.panel h2 { font-size:15px; margin:26px 0 6px; }
+.field { display:flex; flex-direction:column; gap:4px; font-size:13px; color:var(--muted); margin:10px 0; }
+.field input[type=range] { width:100%; }
+select, button { font:inherit; padding:9px 12px; border:1px solid var(--line); border-radius:8px; background:#fff; color:var(--fg); }
+button { cursor:pointer; }
+button:hover { border-color:#c9c9c4; }
+.row { display:flex; gap:10px; flex-wrap:wrap; }
+.row .field { flex:1; }
+.photos { display:grid; grid-template-columns: repeat(auto-fill, minmax(72px, 1fr)); gap:8px; }
+.photos button { padding:0; aspect-ratio:1; overflow:hidden; border-radius:8px; }
+.photos img { width:100%; height:100%; object-fit:cover; display:block; }
+.photos .empty { grid-column:1/-1; font-size:13px; color:var(--muted); }
+.file { display:inline-block; margin-top:10px; font-size:14px; text-decoration:underline; cursor:pointer; }
+.file input { display:none; }
+@media (max-width: 860px) {
+  .layout { grid-template-columns: 1fr; padding:12px; gap:16px; }
+  lafabrik-viewer { max-height: 78dvh; }
+}
