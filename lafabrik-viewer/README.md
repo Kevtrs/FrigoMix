@@ -144,8 +144,9 @@ et définissez les couleurs dans `config.json → filaments`. Puis `npm run impo
   reliefs sur le fond et des moulures sur le papier, contre-jour pour le dos ; ombre de contact au sol.
 - Tone mapping « Neutral » (couleurs du PNG peu altérées), fond gris très clair.
 - Stries de couches FDM (0,2 mm) simulées sur les flancs des pièces, visibles en gros plan.
-- Protection : plastique très transparent avec reflets discrets ; masquable ; jamais traversée (contrôle
-  de hauteur à l'import et dans l'éditeur).
+- Protection : **désactivée par défaut** (les cadres LaFabrik n'ont pas de vitre). Le code est conservé : mettre
+  `"glass": { "enabled": true, "visibleByDefault": true }` dans `config.json` (ou cocher « Protection présente »
+  dans l'éditeur) la réactive ; plastique très transparent, masquable, jamais traversée par les reliefs.
 
 ## Performances mesurées (fichiers de test)
 

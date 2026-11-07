@@ -30,7 +30,7 @@ const cfg = {
   background: { src: 'background.webp', original: 'background.png', widthMm: 210, heightMm: 300, offsetMm: [0, 0], rotationDeg: 0 },
   filaments: {},
   relief: { src: 'relief.glb', pieces: [] },
-  glass: { enabled: true, visibleByDefault: true },
+  glass: { enabled: false, visibleByDefault: false } // vitre désactivée par défaut ; passer enabled à true pour la réactiver,
   camera: { initial: { azimuthDeg: -22, elevationDeg: 8 }, fill: 0.84, minDistanceMm: 140, maxDistanceMm: 1500, autoRotate: false },
   photos: [],
   poster: 'poster.webp',

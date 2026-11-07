@@ -53,8 +53,8 @@
     ]
   },
   "glass": {
-    "enabled": true,
-    "visibleByDefault": true
+    "enabled": false,
+    "visibleByDefault": false
   },
   "camera": {
     "initial": {
