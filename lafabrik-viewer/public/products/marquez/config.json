@@ -9,12 +9,12 @@
       "low": "background-2048.webp"
     },
     "widthMm": 210,
-    "heightMm": 300,
+    "heightMm": 297.03,
     "offsetMm": [0, 0],
     "rotationDeg": 0,
-    "placeholder": true,
-    "pixels": [2480, 3543],
-    "original": "background.png"
+    "pixels": [1414, 2000],
+    "original": "background.png",
+    "note": "Image reçue par discussion (1414×2000 px, ratio A4 : 210×297 mm). Remplacer par le PNG d'impression original pour une netteté maximale."
   },
   "filaments": {
     "1": {
@@ -34,9 +34,9 @@
       {
         "id": "numero-93",
         "name": "Numero 93",
-        "positionMm": [0, -62, 0],
+        "positionMm": [0, -106, 0],
         "rotationDeg": [0, 0, 0],
-        "scale": [1, 1, 1],
+        "scale": [0.5, 0.5, 1],
         "visible": true,
         "sizeMm": [112.4, 76.14, 5],
         "parts": [
@@ -50,7 +50,8 @@
           }
         ]
       }
-    ]
+    ],
+    "placeholder": true
   },
   "glass": {
     "enabled": false,

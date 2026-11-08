@@ -19,7 +19,7 @@ el.addEventListener('ready', (e) => {
   window.__lafabrik = { viewer: v, ready: true };
   const cfg = v.config;
   $('#title').textContent = cfg.name;
-  const warn = cfg.background.placeholder ? ' · ⚠ fond et relief de substitution (fichiers originaux non fournis)' : '';
+  const warn = cfg.relief?.placeholder ? ' · ⚠ relief de substitution (3MF du « 93 » non fourni)' : '';
   $('#status').textContent = `Chargé en ${v.loadTimeMs} ms · qualité « ${v.tierName} »${warn}`;
   renderPhotos(v, cfg);
 });
