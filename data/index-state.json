@@ -1,5 +1,5 @@
 {
-  "lastRun": "2026-11-02T12:22:39.180Z",
+  "lastRun": "2026-11-09T12:46:35.067Z",
   "failedIds": {
     "r144505": {
       "reason": "qualite",
@@ -2151,19 +2151,19 @@
     }
   },
   "lastStats": {
-    "discovered": 11534,
+    "discovered": 11548,
     "alreadyCached": 11177,
-    "newlyFetched": 0,
+    "newlyFetched": 14,
     "refreshed": 0,
     "removed404": 0,
-    "skippedCooldown": 1,
+    "skippedCooldown": 357,
     "errors": {
       "403": 0,
       "404": 0,
       "timeout": 0,
       "autre": 0,
-      "qualite": 356
+      "qualite": 0
     },
-    "totalFinal": 11185
+    "totalFinal": 11199
   }
 }
